@@ -1,0 +1,18 @@
+{% load staticfiles %}
+<html>
+	<head>
+		<title>Django Coder Blogs</title>
+	</head>
+	<body>
+		<div>
+			<h1><a href="">Django Coder Blogs</a></h1>
+		</div>
+		<div>
+			<a href="{% url 'post_new' %}">Post New</a>
+		</div>
+		<div>
+			{% block content %}
+			{% endblock %}
+		</div>
+	</body>
+</html>
