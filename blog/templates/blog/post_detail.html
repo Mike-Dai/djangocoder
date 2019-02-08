@@ -11,4 +11,18 @@
 		<a href="{% url 'post_edit' pk=post.pk %}">Edit</a>
 		<a href="{% url 'post_delete' pk=post.pk %}">Delete</a>
 	{% endif %}
+	<a href="{% url 'add_comment' pk=post.pk%}">Add Comment</a>
+	{% for comment in post.comments.all %}
+		{% if user.is_authenticated or comment.approved_comment %}
+			<p>{{ comment.created_date }}</p>
+			{% if not comment.approved_comment %}
+				<a href="{% url 'approve_comment' pk=comment.pk %}">Approve</a>
+				<a href="{% url 'remove_comment' pk=comment.pk %}">Remove</a>
+			{% endif %}
+			<p>{{ comment.author }}</p>
+			<p>{{ comment.text|linebreaks }}</p>
+		{% endif %}
+	{% empty %}
+		<p>No comments here yet:(</p>
+	{% endfor %}
 {% endblock %}

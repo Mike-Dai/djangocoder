@@ -9,8 +9,11 @@
 		</div>
 		<div>
 			{% if user.is_authenticated %}
+				<h1>Hello, {{ user.username }}</h1>
 				<a href="{% url 'post_new' %}">Post New</a>
 				<a href="{% url 'post_draft_list' %}">Post Draft List</a>
+			{% else %}
+				<a href="{% url 'login' %}">Login</a>
 			{% endif %}
 		</div>
 		<div>
