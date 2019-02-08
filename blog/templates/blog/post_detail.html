@@ -2,8 +2,13 @@
 {% block content %}
 	{% if post.published_date %}
 		<p>published: {{ post.published_date }}</p>
+	{% else %}
+		<a href="{% url 'post_publish' pk=post.pk %}">Publish</a>
 	{% endif %}
 	<h1>{{ post.title }}</h1>
 	<p>{{ post.text|linebreaksbr }}</p>
-	<button href="{% url 'post_edit' pk=post.pk %}">Edit</button>
+	{% if user.is_authenticated %}
+		<a href="{% url 'post_edit' pk=post.pk %}">Edit</a>
+		<a href="{% url 'post_delete' pk=post.pk %}">Delete</a>
+	{% endif %}
 {% endblock %}
