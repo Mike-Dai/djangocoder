@@ -1,0 +1,29 @@
+.container {
+	background-color: #80bdff;
+	margin-top: 30px;
+	padding-top: 20px;
+	border-radius: 5px;
+}
+.media {
+	background-color: white;
+	margin-bottom: 20px;
+	border-radius: 5px;
+}
+.blog {
+	background-color: white;
+	margin: 20px;
+	padding:15px;
+	border-radius: 5px;
+}
+.comment-list {
+	background-color: white;
+	margin: 20px;
+	margin-bottom: 20px;
+	padding:15px;
+	border-radius: 5px;
+}
+.comment {
+	margin: 5px;
+	padding:15px;
+	border-bottom: solid 1px gray;
+}
