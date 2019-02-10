@@ -12,4 +12,5 @@ urlpatterns = [
 	url(r'^post/(?P<pk>[0-9]+)/add_comment/$', views.add_comment, name='add_comment'),
 	url(r'^comment/(?P<pk>[0-9]+)/approve/$', views.approve_comment, name='approve_comment'),
 	url(r'^comment/(?P<pk>[0-9]+)/remove/$', views.remove_comment, name='remove_comment'),
+	#url(r'^category/(?P<pk>[0-9]+)/$', views.category, name='category'),
 ]
