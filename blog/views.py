@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
-from .models import Post, Comment, Category
+from .models import Post, Comment
 from .forms import PostForm, CommentForm
 from django.contrib.auth.decorators import login_required
 
@@ -89,13 +89,3 @@ def remove_comment(request,pk):
 	post = comment.post
 	comment.delete()
 	return redirect('post_detail',pk=post.pk)
-
-"""
-def category(request, category_name_slug):
-	context_dict = {}
-	category = get_object_or_404(Category, slug=category_name_slug)
-	posts = get_object_or_404(Post, category=category)
-	context_dict['category_name'] = category.name
-	context_dict['posts'] = posts
-	return render(request, 'blog/category.html',context_dict)
-"""
