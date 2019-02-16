@@ -3,13 +3,6 @@
 <div class="container">
 	<div class="row">
 		<div class="col-lg-8">
-			<div class="media">
-				<div class="category-list">
-					{% for category in categories %}
-					<li>{{ category.name }}</li>
-					{% endfor %}
-				</div>
-			</div>
 			<div class="summary-list">
 				{% for post in posts %}
 				<div class="media mb-1 mb-sm-2 p-2 p-lg-3">
@@ -21,7 +14,6 @@
 										{{ post.published_date }}
 									</span>
 									<span> comments: {{ post.comments.count }}</span>
-									<span> views: {{ post.views }}</span>
 								</div>
 								<h2 class="mt-0 font-weight-bold text-info f-17">
 									<a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a>
