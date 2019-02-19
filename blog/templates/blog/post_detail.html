@@ -1,6 +1,6 @@
 {% extends 'blog/base.html' %}
 {% block content %}
-	<div class="container">
+	
 		<div class="blog">
 			{% if post.published_date %}
 				<p>published: {{ post.published_date }}</p>
@@ -42,5 +42,5 @@
 				<p>No comments here yet:(</p>
 			{% endfor %}
 		</div>
-	</div>
+	
 {% endblock %}

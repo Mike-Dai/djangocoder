@@ -1,5 +1,6 @@
 <!doctype html>
 {% load staticfiles %}
+{% load blog_tags %}
 <html lang="en">
   <head>
 	    <!-- Required meta tags -->
@@ -57,7 +58,37 @@
 				<!--<h1>Hello, {{ user.username }}</h1>-->
 			{% endif %}
 		</div>
-		<div>
+
+		
+		<div class="container">
+			<div class="sidebar col-sm-3">
+				<div class="widget widget-recent-posts">
+					<h3 class="widget-title">latest posts</h3>
+				    {% get_recent_posts as recent_post_list %}
+			    	<ul>
+			    	{% for post in recent_post_list %}
+			    		<li>
+			      			<a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a>
+			    		</li>
+			    	{% empty %}
+			    		no post!
+			    	{% endfor %}
+			  		</ul>
+				</div>
+				<div class="widget widget-archives">
+					<h3 class="widget-title">archives</h3>
+				    {% archives as date_list %}
+			    	<ul>
+			    	{% for date in date_list %}
+			    		<li>
+			      			<a href="#">{{ date.year }}-{{ date.month }}</a>
+			    		</li>
+			    	{% empty %}
+			    		no archive!
+			    	{% endfor %}
+			  		</ul>
+				</div>
+			</div>
 			{% block content %}
 			{% endblock %}
 		</div>
