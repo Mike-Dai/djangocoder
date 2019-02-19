@@ -1,3 +1,5 @@
+import markdown
+
 from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
 from .models import Post, Comment
@@ -12,6 +14,12 @@ def post_list(request):
 def post_detail(request, pk):
 	post = get_object_or_404(Post, pk=pk)
 	#comments = Comment.objects.filter(pk=pk)
+	post.text = markdown.markdown(post.text,
+								extensions=[
+									'markdown.extensions.extra',
+                                    'markdown.extensions.codehilite',
+                                    'markdown.extensions.toc',
+                                    ])
 	return render(request, 'blog/post_detail.html', {'post':post})
 
 @login_required
