@@ -89,3 +89,9 @@ def remove_comment(request,pk):
 	post = comment.post
 	comment.delete()
 	return redirect('post_detail',pk=post.pk)
+
+def archives(request, year, month):
+	post_list = Post.objects.filter(created_date__year=year,
+									created_date__month=month,
+									).order_by('-created_date')
+	return render(request, 'blog/post_list.html', {'posts':post_list})

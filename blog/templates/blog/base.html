@@ -81,7 +81,7 @@
 			    	<ul>
 			    	{% for date in date_list %}
 			    		<li>
-			      			<a href="#">{{ date.year }}-{{ date.month }}</a>
+			      			<a href="{% url 'archives' date.year date.month %}">{{ date.year }}-{{ date.month }}</a>
 			    		</li>
 			    	{% empty %}
 			    		no archive!
