@@ -1,7 +1,7 @@
 {% extends 'blog/base.html' %}
 {% block content %}
 	
-		<div class="blog">
+		<div class="blog col-md-8">
 			{% if post.published_date %}
 				<p>published: {{ post.published_date }}</p>
 			{% else %}
@@ -21,7 +21,7 @@
 					<input class="btn btn-primary" type="button" value="Comment"/>
 				</a>
 		</div>
-		<div class="comment-list">
+		<div class="comment-list col-md-8">
 			{% for comment in post.comments.all %}
 				<div class="comment">
 					{% if user.is_authenticated or comment.approved_comment %}

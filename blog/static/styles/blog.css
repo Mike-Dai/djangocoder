@@ -2,12 +2,16 @@
 	background-color: #80bdff;
 	margin-top: 30px;
 	padding-top: 20px;
+	padding-bottom: 20px;
 	border-radius: 5px;
 }
 .media {
 	background-color: white;
 	margin-bottom: 20px;
 	border-radius: 5px;
+}
+.summary-list {
+	padding-top: 20px;
 }
 .blog {
 	background-color: white;
@@ -31,7 +35,7 @@
 .sidebar {
 	float:right;
 	background-color: white;
-	margin: 10px;
+	margin: 20px;
 	padding:10px;
 	border-radius: 5px;
 }
