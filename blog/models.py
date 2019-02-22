@@ -7,10 +7,15 @@ class Post(models.Model):
 	text = models.TextField()
 	created_date = models.DateTimeField(default=timezone.now)
 	published_date = models.DateTimeField(blank=True, null=True)
+	views = models.PositiveIntegerField(default=0)
 
 	def publish(self):
 		self.published_date = timezone.now()
 		self.save()
+
+	def increase_views(self):
+		self.views = self.views + 1
+		self.save(update_fields=['views'])
 
 	def __str__(self):
 		return self.title

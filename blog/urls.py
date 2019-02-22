@@ -14,3 +14,4 @@ urlpatterns = [
 	url(r'^comment/(?P<pk>[0-9]+)/remove/$', views.remove_comment, name='remove_comment'),
 	url(r'^archives/(?P<year>[0-9]{4})/(?P<month>[0-9]{1,2})/$', views.archives, name='archives'),
 ]
+

@@ -14,6 +14,7 @@
 										{{ post.published_date }}
 									</span>
 									<span> comments: {{ post.comments.count }}</span>
+									<span> views: {{ post.views }}</span>
 								</div>
 								<h2 class="mt-0 font-weight-bold text-info f-17">
 									<a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a>
