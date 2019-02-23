@@ -1,4 +1,4 @@
-from ..models import Post
+from ..models import Post, Tag
 from django import template
 
 register = template.Library()
@@ -10,3 +10,7 @@ def get_recent_posts(num=5):
 @register.simple_tag
 def archives():
 	return Post.objects.dates('created_date','month',order='DESC')
+
+@register.simple_tag
+def tags():
+	return Tag.objects.all()

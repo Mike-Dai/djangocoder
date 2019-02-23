@@ -1,6 +1,12 @@
 from django.db import models
 from django.utils import timezone
 
+class Tag(models.Model):
+	name = models.CharField(max_length=100)
+
+	def __str__(self):
+		return self.name
+
 class Post(models.Model):
 	title = models.CharField(max_length=200)
 	author = models.ForeignKey('auth.User', on_delete=models.CASCADE)
@@ -8,6 +14,7 @@ class Post(models.Model):
 	created_date = models.DateTimeField(default=timezone.now)
 	published_date = models.DateTimeField(blank=True, null=True)
 	views = models.PositiveIntegerField(default=0)
+	tags = models.ManyToManyField(Tag, blank=True)
 
 	def publish(self):
 		self.published_date = timezone.now()

@@ -104,3 +104,7 @@ def archives(request, year, month):
 									created_date__month=month,
 									).order_by('-created_date')
 	return render(request, 'blog/post_list.html', {'posts':post_list})
+
+def tag_detail(request, pk):
+	post_list = Post.objects.all()
+	return render(request, 'blog/post_list.html', {'posts':post_list})
