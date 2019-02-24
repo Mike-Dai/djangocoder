@@ -2,7 +2,7 @@ import markdown
 
 from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
-from .models import Post, Comment
+from .models import Post, Comment, Tag
 from .forms import PostForm, CommentForm
 from django.contrib.auth.decorators import login_required
 from django.views.generic import ListView, DetailView
@@ -146,5 +146,6 @@ def archives(request, year, month):
 	return render(request, 'blog/post_list.html', {'posts':post_list})
 """
 def tag_detail(request, pk):
-	post_list = Post.objects.all()
+	tag = get_object_or_404(Tag, pk=pk)
+	post_list = Post.objects.filter(tags__name=tag.name)
 	return render(request, 'blog/post_list.html', {'posts':post_list})
