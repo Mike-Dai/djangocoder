@@ -2,7 +2,7 @@ from django.conf.urls import url
 from . import views
 
 urlpatterns = [
-	url(r'^$', views.post_list, name='post_list'),
+	url(r'^$', views.IndexView.as_view(), name='post_list'),
 	url(r'^post/(?P<pk>[0-9]+)/$', views.post_detail, name='post_detail'),
 	url(r'^post/new/$', views.post_new, name='post_new'),
 	url(r'^post/(?P<pk>[0-9]+)/edit/$', views.post_edit, name='post_edit'),
@@ -12,7 +12,7 @@ urlpatterns = [
 	url(r'^post/(?P<pk>[0-9]+)/add_comment/$', views.add_comment, name='add_comment'),
 	url(r'^comment/(?P<pk>[0-9]+)/approve/$', views.approve_comment, name='approve_comment'),
 	url(r'^comment/(?P<pk>[0-9]+)/remove/$', views.remove_comment, name='remove_comment'),
-	url(r'^archives/(?P<year>[0-9]{4})/(?P<month>[0-9]{1,2})/$', views.archives, name='archives'),
+	url(r'^archives/(?P<year>[0-9]{4})/(?P<month>[0-9]{1,2})/$', views.ArchivesView.as_view(), name='archives'),
 	url(r'^tag/(?P<pk>[0-9]+)/$', views.tag_detail, name='tag_detail'),
 ]
 

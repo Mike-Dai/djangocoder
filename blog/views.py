@@ -5,11 +5,17 @@ from django.utils import timezone
 from .models import Post, Comment
 from .forms import PostForm, CommentForm
 from django.contrib.auth.decorators import login_required
+from django.views.generic import ListView
 
-
+class IndexView(ListView):
+	model = Post
+	template_name = 'blog/post_list.html'
+	context_object_name = 'posts'
+"""
 def post_list(request):
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
     return render(request, 'blog/post_list.html', {'posts': posts})
+"""
 
 def post_detail(request, pk):
 	post = get_object_or_404(Post, pk=pk)
@@ -99,12 +105,24 @@ def remove_comment(request,pk):
 	comment.delete()
 	return redirect('post_detail',pk=post.pk)
 
+class ArchivesView(ListView):
+	model = Post
+	template_name = 'blog/post_list.html'
+	context_object_name = 'posts'
+
+	def get_queryset(self):
+		year = self.kwargs.get('year')
+		month = self.kwargs.get('month')
+		return super(ArchivesView, self).get_queryset().filter(created_date__year=year,
+									created_date__month=month,
+									).order_by('-created_date')
+"""
 def archives(request, year, month):
 	post_list = Post.objects.filter(created_date__year=year,
 									created_date__month=month,
 									).order_by('-created_date')
 	return render(request, 'blog/post_list.html', {'posts':post_list})
-
+"""
 def tag_detail(request, pk):
 	post_list = Post.objects.all()
 	return render(request, 'blog/post_list.html', {'posts':post_list})
