@@ -5,7 +5,7 @@ from django.utils import timezone
 from .models import Post, Comment
 from .forms import PostForm, CommentForm
 from django.contrib.auth.decorators import login_required
-from django.views.generic import ListView
+from django.views.generic import ListView, DetailView
 
 class IndexView(ListView):
 	model = Post
@@ -16,6 +16,26 @@ def post_list(request):
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
     return render(request, 'blog/post_list.html', {'posts': posts})
 """
+
+class PostDetailView(DetailView):
+	model = Post
+	template_name = 'blog/post_detail.html'
+	context_object_name = 'post'
+
+	def get(self, request, *args, **kwargs):
+		response = super(PostDetailView, self).get(request, *args, **kwargs)
+		self.object.increase_views()
+		return response
+
+	def get_object(self, queryset=None):
+		post = super(PostDetailView, self).get_object(queryset=None)
+		post.text = markdown.markdown(post.text,
+									extensions=[
+										'markdown.extensions.extra',
+	                                    'markdown.extensions.codehilite',
+	                                    'markdown.extensions.toc',
+	                                    ])
+		return post
 
 def post_detail(request, pk):
 	post = get_object_or_404(Post, pk=pk)
