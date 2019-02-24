@@ -25,6 +25,17 @@
 					</div>
 				</div>
 				{% endfor %}
+				{% if is_paginated %}
+				<div class="pagination-simple">
+					{% if page_obj.has_previous %}
+						<a href="?page={{ page_obj.previous_page_number }}">previos</a>
+				    {% endif %}
+				    <span class="current">page {{ page_obj.number }}/ {{ paginator.num_pages }} pages total</span>
+				    {% if page_obj.has_next %}
+				    	<a href="?page={{ page_obj.next_page_number }}"> next </a>
+				    {% endif %}
+				</div>
+				{% endif %}
 			</div>
 		</div>
 	</div>

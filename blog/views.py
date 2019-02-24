@@ -6,11 +6,13 @@ from .models import Post, Comment
 from .forms import PostForm, CommentForm
 from django.contrib.auth.decorators import login_required
 from django.views.generic import ListView, DetailView
+from django.core.paginator import Paginator
 
 class IndexView(ListView):
 	model = Post
 	template_name = 'blog/post_list.html'
 	context_object_name = 'posts'
+	paginate_by = 2
 """
 def post_list(request):
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
