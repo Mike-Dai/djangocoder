@@ -3,8 +3,24 @@
 	<div>
 		<form method="POST">
 			{% csrf_token %}
-			{{ form.as_p }}
-			<button class="btn btn-primary" type="submit">Save</button>
+			<div>
+				<label>title</label>
+				<input type="text"/>
+			</div>
+			<div>
+				<label>tags</label>
+				<input type="checkbox"/>python
+				<input type="checkbox"/>django
+				<input type="checkbox"/>flask
+			</div>
+			<div>
+				<label style = "float: left;">text</label>
+				<textarea></textarea>
+				<div style = "text-align: center;">
+					<button class="btn btn-primary" type="submit">Save</button>
+				</div>
+			</div>
+			
 		</form> 
 	</div>
 {% endblock %}
