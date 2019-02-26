@@ -79,9 +79,9 @@
 				    {% tags as tag_list %}
 			    	<ul>
 			    	{% for tag in tag_list %}
-			    		<li>
-			      			<a href="{% url 'tag_detail' pk=tag.pk %}">{{ tag.name }}</a>
-			    		</li>
+			    		<div>
+			    			<a href="{% url 'tag_detail' pk=tag.pk%}" class="badge badge-pill badge-warning">{{ tag.name }} </a>
+			    		</div>
 			    	{% empty %}
 			    		no tags!
 			    	{% endfor %}

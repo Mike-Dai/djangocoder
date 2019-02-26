@@ -13,7 +13,7 @@ class IndexView(ListView):
 	model = Post
 	template_name = 'blog/post_list.html'
 	context_object_name = 'posts'
-	paginate_by = 6
+	paginate_by = 5
 
 	def get_context_data(self, **kwargs):
 		context = super().get_context_data(**kwargs)
@@ -94,17 +94,7 @@ class PostDetailView(DetailView):
 	                                    ])
 		return post
 
-def post_detail(request, pk):
-	post = get_object_or_404(Post, pk=pk)
-	#comments = Comment.objects.filter(pk=pk)
-	post.increase_views()
-	post.text = markdown.markdown(post.text,
-								extensions=[
-									'markdown.extensions.extra',
-                                    'markdown.extensions.codehilite',
-                                    'markdown.extensions.toc',
-                                    ])
-	return render(request, 'blog/post_detail.html', {'post':post})
+
 
 @login_required
 def post_new(request):
