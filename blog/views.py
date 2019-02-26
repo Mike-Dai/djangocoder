@@ -153,21 +153,21 @@ def add_comment(request, pk):
 			comment.created_date = timezone.now()
 			comment.post = post
 			comment.save()
-			return redirect('post_detail', pk=pk)
+			return redirect('post_detail', pk=post.pk)
 	else:
 		form = CommentForm()
 	return render(request, 'blog/add_comment.html', {'form': form})
 
 @login_required
 def approve_comment(request,pk):
-	comment = get_object_or_404(pk=pk)
+	comment = get_object_or_404(Comment, pk=pk)
 	post = comment.post
-	comment.publish()
+	comment.approve()
 	return redirect('post_detail',pk=post.pk)
 
 @login_required
 def remove_comment(request,pk):
-	comment = get_object_or_404(pk=pk)
+	comment = get_object_or_404(Comment, pk=pk)
 	post = comment.post
 	comment.delete()
 	return redirect('post_detail',pk=post.pk)

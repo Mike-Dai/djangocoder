@@ -19,7 +19,7 @@
 					<input class="btn btn-primary" type="button" value="Edit"/>
 				</a>
 				<a href="{% url 'post_delete' pk=post.pk %}">
-					<input class="btn btn-primary" type="button" value="Delete"/>
+					<input class="btn btn-danger" type="button" value="Delete"/>
 				</a>
 			{% endif %}
 				<a href="{% url 'add_comment' pk=post.pk %}">
@@ -37,7 +37,7 @@
 								<input class="btn btn-outline-primary btn-sm"  type="button" value="Approve"/>
 							</a>
 							<a href="{% url 'remove_comment' pk=comment.pk %}">
-								<input class="btn btn-outline-primary btn-sm" type="button" value="Remove"/>
+								<input class="btn btn-outline-danger btn-sm" type="button" value="Remove"/>
 							</a>
 						{% endif %}						
 						</p>
