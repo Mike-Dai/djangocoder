@@ -7,12 +7,13 @@ from .forms import PostForm, CommentForm
 from django.contrib.auth.decorators import login_required
 from django.views.generic import ListView, DetailView
 from django.core.paginator import Paginator
+from django.db.models import Q
 
 class IndexView(ListView):
 	model = Post
 	template_name = 'blog/post_list.html'
 	context_object_name = 'posts'
-	paginate_by = 1
+	paginate_by = 6
 
 	def get_context_data(self, **kwargs):
 		context = super().get_context_data(**kwargs)
@@ -203,3 +204,13 @@ def tag_detail(request, pk):
 	tag = get_object_or_404(Tag, pk=pk)
 	post_list = Post.objects.filter(tags__name=tag.name)
 	return render(request, 'blog/post_list.html', {'posts':post_list})
+
+def search(request):
+	q = request.GET.get('q')
+	error_msg = ''
+
+	if not q:
+		error_msg = "Please enter the key word"
+		return render(request, 'blog/post_list.html', {'error_msg':error_msg})
+	posts = Post.objects.filter(Q(title__icontains=q) | Q(text__icontains=q))
+	return render(request, 'blog/post_list.html', {'error_msg':error_msg, 'posts':posts})
