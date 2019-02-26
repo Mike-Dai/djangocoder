@@ -3,8 +3,19 @@
 <div>
 	<form method="POST">
 		{% csrf_token %}
-		{{ form.as_p }}
-		<button class="btn btn-primary" type="submit">Comment</button>
+		<table>
+			<tr>
+				<td class="form-label">author: </td>
+				<td class="form-input"><input type="text"/></td>
+			</tr>
+			<tr>
+				<td class="form-label">text: </td>
+				<td class="form-input"><textarea></textarea></td>
+			</tr>
+		</table>
+		<div style = "text-align: center;">
+			<button class="btn btn-primary" type="submit">Comment</button>
+		</div>
 	</form>
 </div>
 {% endblock %}

@@ -43,8 +43,19 @@
 .badge-list {
 	margin:20px;
 }
+.form-label {
+	float:left;
+}
+.form-input {
+
+}
 textarea {
 	width: 700px;
 	height: 300px;
-	margin-left: 30px;
+}
+tr {
+	height: 40px;
+}
+button {
+	margin-top:20px;
 }
