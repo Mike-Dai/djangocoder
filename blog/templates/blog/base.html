@@ -52,8 +52,8 @@
 		</div>
 
 		
-		<div class="container">
-			<div class="sidebar col-sm-3">
+		<div class="sidebar-container">
+			<div class="sidebar col-md-10">
 				<div class="widget widget-recent-posts">
 					<h3 class="widget-title">latest posts</h3>
 				    {% get_recent_posts as recent_post_list %}
@@ -94,6 +94,8 @@
 			  		</ul>
 				</div>				
 			</div>
+		</div>
+		<div class="container col-lg-9">
 			{% block content %}
 			{% endblock %}
 		</div>

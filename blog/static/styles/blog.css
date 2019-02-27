@@ -1,14 +1,28 @@
 .container {
 	background-color: #80bdff;
 	margin-top: 30px;
+	margin-right:20px;
+	margin-left:20px;
 	padding-top: 20px;
 	padding-bottom: 20px;
 	border-radius: 5px;
 }
+.sidebar-container {
+	float:right;
+	background-color: #80bdff;
+	margin-top: 30px;
+	margin-right:20px;
+	margin-left:20px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	border-radius: 5px;	
+}
 .media {
 	background-color: white;
 	margin-bottom: 20px;
+	margin-left:30px;
 	border-radius: 5px;
+	width:1000px;
 }
 .summary-list {
 	padding-top: 20px;
@@ -48,6 +62,10 @@
 }
 .form-input {
 
+}
+.pagination-simple {
+	margin:30px;
+	text-align: center;
 }
 textarea {
 	width: 700px;
