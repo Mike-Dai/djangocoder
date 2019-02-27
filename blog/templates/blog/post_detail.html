@@ -1,12 +1,14 @@
 {% extends 'blog/base.html' %}
 {% block content %}
 	
-		<div class="blog col-md-8">
+		<div class="blog col-lg-11">
 			{% if post.published_date %}
 				<p>published: {{ post.published_date }}</p>
 			{% else %}
 				<a href="{% url 'post_publish' pk=post.pk %}">Publish</a>
 			{% endif %}
+			<span>{{ post.views }} view{{ post.views|pluralize }}</span>  
+			<span>{{ post.comments.count }} comment{{ post.comments.count|pluralize }}</span>
 			<h1>{{ post.title }}</h1>
 			<p>{{ post.text|safe|linebreaksbr }}</p>
 			<div class = "badge-list">
@@ -26,7 +28,7 @@
 					<input class="btn btn-primary" type="button" value="Comment"/>
 				</a>
 		</div>
-		<div class="comment-list col-md-8">
+		<div class="comment-list col-lg-11">
 			{% for comment in post.comments.all %}
 				<div class="comment">
 					{% if user.is_authenticated or comment.approved_comment %}
