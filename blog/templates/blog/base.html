@@ -17,25 +17,28 @@
 			<a class="navbar-brand" href="/">Django Coder Blogs</a>
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			    <ul class="navbar-nav mr-auto">
-			      <li class="nav-item active">
-			        <a class="nav-link" href="{% url 'post_list' %}">Home <span class="sr-only">(current)</span></a>
-			      </li>
+			        <li class="nav-item active">
+			        	<a class="nav-link" href="{% url 'post_list' %}">Home <span class="sr-only">(current)</span></a>
+			        </li>
 			        {% if user.is_authenticated %}
-				      <li class="nav-item">
-				        <a class="nav-link" href="{% url 'post_new' %}">Post New</a>
-				      </li>
-				       <li class="nav-item">
-				        <a class="nav-link" href="{% url 'post_draft_list' %}">Post Draft</a>
-				      </li>
+				        <li class="nav-item">
+				        	<a class="nav-link" href="{% url 'post_new' %}">Post New</a>
+				      	</li>
+				       	<li class="nav-item">
+				        	<a class="nav-link" href="{% url 'post_draft_list' %}">Post Draft</a>
+				      	</li>
+				      	<li class="nav-item">
+				        	<a class="nav-link" href="{% url 'logout' %}">Logout</a>
+				      	</li>
 			        {% else %}
 			      		<li class="nav-item">
-				        <a class="nav-link" href="#">Login</a>
-				      </li>
+				        	<a class="nav-link" href="{% url 'login' %}">Login</a>
+				      	</li>
 				    {% endif %}
 			    </ul>
 			    <form class="form-inline my-2 my-lg-0" role="search" method="get" id="searchform" action="{% url 'search' %}">
-			      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="q">
-			      <button type="submit" class="btn btn-outline-warning my-2 my-sm-0" type="submit">Search</button>
+			       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="q">
+			       <button type="submit" class="btn btn-outline-warning my-2 my-sm-0" type="submit">Search</button>
 			    </form>
 			  </div>
 		</nav>
