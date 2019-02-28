@@ -30,22 +30,24 @@
 		</div>
 		<div class="comment-list col-lg-11">
 			{% for comment in post.comments.all %}
+				{% if user.is_authenticated or comment.approved_comment %}
 				<div class="comment">
-					{% if user.is_authenticated or comment.approved_comment %}
-						<p class="text-muted mb-2 f-12">
-						{{ comment.author }} {{ comment.created_date }}
-						{% if not comment.approved_comment %}
-							<a href="{% url 'approve_comment' pk=comment.pk %}">
-								<input class="btn btn-outline-primary btn-sm"  type="button" value="Approve"/>
-							</a>
-							<a href="{% url 'remove_comment' pk=comment.pk %}">
-								<input class="btn btn-outline-danger btn-sm" type="button" value="Remove"/>
-							</a>
-						{% endif %}						
-						</p>
-						<p>{{ comment.text|linebreaks }}</p>
-					{% endif %}
+					<p class="text-muted mb-2 f-12">
+					{{ comment.author }} {{ comment.created_date }}
+					{% if not comment.approved_comment %}
+						<!--
+						<a href="#">
+							<input class="btn btn-outline-primary btn-sm"  type="button" value="Approve"/>
+						</a>
+						-->
+						<a href="{% url 'remove_comment' pk=comment.pk %}">
+							<input class="btn btn-outline-danger btn-sm" type="button" value="Remove"/>
+						</a>
+					{% endif %}						
+					</p>
+					<p>{{ comment.text|linebreaks }}</p>
 				</div>
+				{% endif %}
 			{% empty %}
 				<p>No comments here yet:(</p>
 			{% endfor %}

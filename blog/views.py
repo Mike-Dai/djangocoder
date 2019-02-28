@@ -153,6 +153,7 @@ def add_comment(request, pk):
 			comment = form.save(commit=False)
 			comment.created_date = timezone.now()
 			comment.post = post
+			comment.approve()
 			comment.save()
 			return redirect('post_detail', pk=post.pk)
 	else:
