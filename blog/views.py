@@ -5,6 +5,7 @@ from django.utils import timezone
 from .models import Post, Comment, Tag
 from .forms import PostForm, CommentForm
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.forms import UserCreationForm
 from django.views.generic import ListView, DetailView
 from django.core.paginator import Paginator
 from django.db.models import Q
@@ -204,3 +205,13 @@ def search(request):
 		return render(request, 'blog/post_list.html', {'error_msg':error_msg})
 	posts = Post.objects.filter(Q(title__icontains=q) | Q(text__icontains=q))
 	return render(request, 'blog/post_list.html', {'error_msg':error_msg, 'posts':posts})
+
+def register(request):
+	if request.method == 'POST':
+		form = UserCreationForm(request.POST)
+		if form.is_valid():
+			new_user = form.save()
+			return redirect('login')
+	else:
+		form = UserCreationForm()
+	return render(request, 'registration/registration_form.html', {'form': form})

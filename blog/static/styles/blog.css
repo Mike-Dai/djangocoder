@@ -57,6 +57,20 @@
 .badge-list {
 	margin:20px;
 }
+.register-form {
+	background-color: white;
+	margin: 20px;
+	margin-right:10px;
+	padding:30px;
+	border-radius: 5px;
+}
+.login-form {
+	background-color: white;
+	margin: 20px;
+	margin-right:10px;
+	padding:30px;
+	border-radius: 5px;
+}
 .form-label {
 	float:left;
 }

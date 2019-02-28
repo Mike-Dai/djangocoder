@@ -1,7 +1,11 @@
 {% extends 'blog/base.html' %}
 {% block content %}
-<from method="POST">
+
+<form class="register-form" method="POST">
 	{% csrf_token %}
 	{{ form.as_p }}
-</from>
+	<div style = "text-align: center;">
+		<button class="btn btn-primary" type="submit">Register</button>
+	</div>
+</form>
 {% endblock %}
