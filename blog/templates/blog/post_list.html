@@ -31,30 +31,62 @@
 					<p>No post currently!</p>
 				{% endfor %}
 				{% if is_paginated %}
-				<div class="pagination-simple">
-					{% if first %}
-						<a href="?page=1">1</a>
-					{% endif %}
-					{% if left %}
-						{% if left_has_more %}
-							<span>...</span>
-						{% endif %}
-						{% for i in left %}
-							<a href="?page={{ i }}">{{ i }}</a>
-						{% endfor %}
-					{% endif %}
-					<a href="?page={{ page_obj.number }}" style="color: red">{{ page_obj.number }}</a>
-					{% if right %}
-						{% for i in right %}
-							<a href="?page={{ i }}">{{ i }}</a>
-						{% endfor %}					{% if right_has_more %}
-							<span>...</span>
-						{% endif %}
-					{% endif %}
-					{% if last %}
-						<a href="?page={{ paginator.num_pages }}">{{ paginator.num_pages }}</a>
-					{% endif %}
+				<div class="text-xs-center">
+					<ul class="pagination justify-content-center">
+					    <!--<li class="page-item"><a class="page-link" href="#">Previous</a></li>-->
+					    <li class="page-item"><a class="page-link" href="?page=1">1</a></li>
+					    <li class="page-item"><a class="page-link" href="?page=2">2</a></li>
+					    <li class="page-item"><a class="page-link" href="?page=3">3</a></li>
+					    <li class="page-item"><a class="page-link" href="?page=4">4</a></li>
+					    <li class="page-item"><a class="page-link" href="?page=5">5</a></li>
+					    <!--<li class="page-item"><a class="page-link" href="#">Next</a></li>-->
+					</ul>
 				</div>
+				<!--
+				<nav aria-label="Page navigation example">
+					<div>
+						<ul class="pagination">
+						{% if first %}
+							<li class="page-item">
+								<a class="page-link" href="?page=1">1</a>
+							</li>
+						{% endif %}
+						{% if left %}
+							{% if left_has_more %}
+								<li class="page-item disabled">
+									<a href="#">...</a>
+								</li>
+							{% endif %}
+							{% for i in left %}
+								<li class="page-item">
+									<a class="page-link" href="?page={{ i }}">{{ i }}</a>
+								</li>
+							{% endfor %}
+						{% endif %}
+						<li class="page-item">
+							<a href="?page={{ page_obj.number }}" style="color: red">{{ page_obj.number }}</a>
+						</li>
+						{% if right %}
+							{% for i in right %}
+								<li class="page-item">
+									<a href="?page={{ i }}">{{ i }}</a>
+								</li>
+							{% endfor %}					
+							{% if right_has_more %}
+								<li class="page-item disabled">
+									<a href="#">...</a>
+								</li>							
+							{% endif %}
+						{% endif %}
+						{% if last %}
+							<li class="page-item">
+								<a class="page-link" href="?page={{ paginator.num_pages }}">{{ paginator.num_pages }}</a>
+							</li>
+						{% endif %}
+						</ul>
+					</div>
+				</nav>
+			-->
 				{% endif %}
 			</div>
 		</div>

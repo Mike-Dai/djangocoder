@@ -81,6 +81,14 @@
 	margin:30px;
 	text-align: center;
 }
+.pagination {
+	margin:20px;
+}
+.nav-user {
+	margin-left:20px;
+	margin-right:20px;
+	color:white;
+}
 textarea {
 	width: 700px;
 	height: 300px;

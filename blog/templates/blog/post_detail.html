@@ -5,7 +5,11 @@
 			{% if post.published_date %}
 				<p>published: {{ post.published_date }}</p>
 			{% else %}
-				<a href="{% url 'post_publish' pk=post.pk %}">Publish</a>
+			<div>
+				<a href="{% url 'post_publish' pk=post.pk %}">
+					<input type="button" class="btn btn-primary" value="Publish"/>
+				</a>
+			</div>
 			{% endif %}
 			<span>{{ post.views }} view{{ post.views|pluralize }}</span>  
 			<span>{{ post.comments.count }} comment{{ post.comments.count|pluralize }}</span>
