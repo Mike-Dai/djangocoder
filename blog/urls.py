@@ -13,7 +13,7 @@ urlpatterns = [
 	url(r'^comment/(?P<pk>[0-9]+)/approve/$', views.approve_comment, name='approve_comment'),
 	url(r'^comment/(?P<pk>[0-9]+)/remove/$', views.remove_comment, name='remove_comment'),
 	url(r'^archives/(?P<year>[0-9]{4})/(?P<month>[0-9]{1,2})/$', views.ArchivesView.as_view(), name='archives'),
-	url(r'^tag/(?P<pk>[0-9]+)/$', views.tag_detail, name='tag_detail'),
+	url(r'^tag/(?P<pk>[0-9]+)/$', views.TagsView.as_view(), name='tag_detail'),
 	url(r'^search/$', views.search, name='search'),
 	url(r'^register/$', views.register, name='register'),
 ]

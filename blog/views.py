@@ -178,6 +178,7 @@ class ArchivesView(ListView):
 	model = Post
 	template_name = 'blog/post_list.html'
 	context_object_name = 'posts'
+	paginate_by = 2;
 
 	def get_queryset(self):
 		year = self.kwargs.get('year')
@@ -192,11 +193,21 @@ def archives(request, year, month):
 									).order_by('-created_date')
 	return render(request, 'blog/post_list.html', {'posts':post_list})
 """
+class TagsView(ListView):
+	model = Post
+	template_name = 'blog/post_list.html'
+	context_object_name = 'posts'
+	paginate_by = 2
+
+	def get_queryset(self):
+		tag = get_object_or_404(Tag, pk=self.kwargs.get('pk'))
+		return super(TagsView, self).get_queryset().filter(tags__name=tag.name).order_by('-created_date')
+"""
 def tag_detail(request, pk):
 	tag = get_object_or_404(Tag, pk=pk)
 	post_list = Post.objects.filter(tags__name=tag.name)
 	return render(request, 'blog/post_list.html', {'posts':post_list})
-
+"""
 def search(request):
 	q = request.GET.get('q')
 	error_msg = ''
