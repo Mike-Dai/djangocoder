@@ -50,12 +50,12 @@
 			    {% endif %}
 			  </div>
 		</nav>
-		<div class="sidebar-container hidden-sm hidden-md">
-			<div class="sidebar col-md-10">
+		<div class="sidebar-container">
+			<div class="sidebar col-md-10" align="center">
 				<div class="widget widget-recent-posts">
 					<h3 class="widget-title">latest posts</h3>
 				    {% get_recent_posts as recent_post_list %}
-			    	<ul>
+			    	<ul style="padding-left:5%">
 			    	{% for post in recent_post_list %}
 			    		<li>
 			      			<a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a>
@@ -68,7 +68,7 @@
 				<div class="widget widget-archives">
 					<h3 class="widget-title">archives</h3>
 				    {% archives as date_list %}
-			    	<ul>
+			    	<ul style="padding-left:5%">
 			    	{% for date in date_list %}
 			    		<li>
 			      			<a href="{% url 'archives' date.year date.month %}">{{ date.year }}-{{ date.month }}</a>
@@ -81,7 +81,7 @@
 				<div class="widget widget-tags">
 					<h3 class="widget-title">tags</h3>
 				    {% tags as tag_list %}
-			    	<ul>
+			    	<ul style="padding-left:7%">
 			    	{% for tag in tag_list %}
 			    		<div>
 			    			<a href="{% url 'tag_detail' pk=tag.pk%}" class="badge badge-pill badge-warning">{{ tag.name }} </a>

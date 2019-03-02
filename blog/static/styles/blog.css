@@ -31,12 +31,19 @@
 .sidebar-container {
 	float:right;
 	background-color: #80bdff;
+	width:16%;
 	margin-top: 3%;
 	margin-right:3%;
-	margin-left:3%;
-	padding-top: 2%;
-	padding-bottom: 2%;
+	margin-left:0;
+	padding-top: 1%;
+	padding-bottom: 1%;
 	border-radius: 5px;	
+}
+.widget {
+	padding:5%;
+}
+.widget-title {
+	font-size:2vw;
 }
 .media {
 	background-color: white;
@@ -47,14 +54,14 @@
 	*/
 	margin:3%;
 	border-radius: 5px;
-	width: 93%;
+	width: 95%;
 }
 .summary-list {
 	/*
 	padding: 3%;
 	*/
-	margin:3%;
-	width: 95%;
+	margin:1%;
+	width: 96%;
 	
 }
 .blog {
@@ -75,10 +82,11 @@
 	border-bottom: solid 1px gray;
 }
 .sidebar {
-	float:right;
 	background-color: white;
-	margin: 3%;
-	padding:2%;
+	width: 100%;
+	margin: 7%;
+	padding:3%;
+	text-align: left;
 	border-radius: 5px;
 }
 .badge-list {
@@ -125,4 +133,7 @@ tr {
 }
 button {
 	margin-top:20px;
+}
+ul {
+	margin-left:7%;
 }
