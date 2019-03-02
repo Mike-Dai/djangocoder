@@ -1,71 +1,84 @@
-@media only screen and (max-width: 1495px) {
+/*
+.sidebar-container {
+	display: none;
+}
+*/
+@media only screen and (max-width: 1200px) {
 	.sidebar-container {
 		display: none;
 	}
 }
+@media screen and (max-width: 1000px) {
+	.container {
+		background-color: white;
+	}
+}
+/*
 @media screen and (min-width: 1495px) {
 	.sidebar-container {
 		display: block;
 	}
 }
+*/
 .container {
 	background-color: #80bdff;
-	margin-top: 30px;
-	margin-right:20px;
-	margin-left:20px;
-	padding:20px;
+	margin-top: 3%;
+	margin-right:3%;
+	margin-left:3%;
+	/*padding:2%;*/
 	border-radius: 5px;
 }
 .sidebar-container {
 	float:right;
 	background-color: #80bdff;
-	margin-top: 30px;
-	margin-right:20px;
-	margin-left:20px;
-	padding-top: 20px;
-	padding-bottom: 20px;
+	margin-top: 3%;
+	margin-right:3%;
+	margin-left:3%;
+	padding-top: 2%;
+	padding-bottom: 2%;
 	border-radius: 5px;	
 }
 .media {
 	background-color: white;
+	/*
 	margin-bottom: 20px;
 	margin-left:30px;
 	margin-right:30px;
-	border-radius: 5px;
-	/*
-	width: 1000px;
 	*/
+	margin:3%;
+	border-radius: 5px;
+	width: 93%;
 }
 .summary-list {
-	padding-top: 20px;
+	/*
+	padding: 3%;
+	*/
+	margin:3%;
+	width: 95%;
+	
 }
 .blog {
 	background-color: white;
-	margin: 20px;
-	margin-right:10px;
-	/*
-	padding:30px;
-	*/
+	margin: 2%;
+	padding:5%;
 	border-radius: 5px;
 }
 .comment-list {
 	background-color: white;
-	margin: 20px;
-	margin-bottom: 20px;
-	padding:15px;
+	margin: 2%;
+	padding:5%;
 	border-radius: 5px;
 }
 .comment {
-	margin: 5px;
-	padding:15px;
+	margin: 2%;
+	padding:3%;
 	border-bottom: solid 1px gray;
 }
 .sidebar {
 	float:right;
 	background-color: white;
-	margin: 20px;
-	margin-bottom: 20px;
-	padding:10px;
+	margin: 3%;
+	padding:2%;
 	border-radius: 5px;
 }
 .badge-list {
@@ -104,10 +117,8 @@
 	color:white;
 }
 textarea {
-	/*
-	width: 700px;
+	width: 94%;
 	height: 300px;
-	*/
 }
 tr {
 	height: 40px;
