@@ -94,6 +94,7 @@
 }
 .badge-list {
 	margin:5%;
+	margin-left:0;
 }
 .register-form {
 	background-color: white;
