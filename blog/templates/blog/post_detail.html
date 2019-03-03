@@ -28,9 +28,13 @@
 					<input class="btn btn-danger" type="button" value="Delete"/>
 				</a>
 			{% endif %}
-				<a href="{% url 'add_comment' pk=post.pk %}">
-					<input class="btn btn-primary" type="button" value="Comment"/>
-				</a>
+			<a href="{% url 'add_comment' pk=post.pk %}">
+				<input class="btn btn-primary" type="button" value="Comment"/>
+			</a>
+			<div>
+				<a href="{% url 'previous_post' pk=post.pk%}">previous</a>
+				<a href="{% url 'next_post' pk=post.pk%}">next</a>
+			</div>
 		</div>
 		<div class="comment-list col-lg-11">
 			{% for comment in post.comments.all %}

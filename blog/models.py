@@ -1,8 +1,12 @@
 from django.db import models
 from django.utils import timezone
+from django.urls import reverse
 
 class Tag(models.Model):
 	name = models.CharField(max_length=100)
+
+	def get_absolute_url(self):
+		return reverse('tag_detail', kwargs={'pk':self.pk})
 
 	def __str__(self):
 		return self.name
@@ -23,6 +27,9 @@ class Post(models.Model):
 	def increase_views(self):
 		self.views = self.views + 1
 		self.save(update_fields=['views'])
+
+	def get_absolute_url(self):
+		return reverse('post_detail', kwargs={'pk':self.pk})
 
 	def __str__(self):
 		return self.title

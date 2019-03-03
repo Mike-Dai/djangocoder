@@ -4,6 +4,8 @@ from . import views
 urlpatterns = [
 	url(r'^$', views.IndexView.as_view(), name='post_list'),
 	url(r'^post/(?P<pk>[0-9]+)/$', views.PostDetailView.as_view(), name='post_detail'),
+	url(r'^post/(?P<pk>[0-9]+)/$', views.previous_post, name='previous_post'),
+	url(r'^post/(?P<pk>[0-9]+)/$', views.next_post, name='next_post'),
 	url(r'^post/new/$', views.post_new, name='post_new'),
 	url(r'^post/(?P<pk>[0-9]+)/edit/$', views.post_edit, name='post_edit'),
 	url(r'^post/draft/$', views.post_draft_list, name='post_draft_list'),

@@ -95,7 +95,15 @@ class PostDetailView(DetailView):
 	                                    ])
 		return post
 
+def previous_post(request, pk):
+	newpk = pk - 1
+	post = get_object_or_404(Post, pk=newpk)
+	return render(request, 'blog/post_detail', {'post':post})
 
+def next_post(request, pk):
+	newpk = pk + 1
+	post = get_object_or_404(Post, pk=newpk)
+	return render(request, 'blog/post_detail', {'post':post})
 
 @login_required
 def post_new(request):
@@ -228,3 +236,4 @@ def register(request):
 	else:
 		form = UserCreationForm()
 	return render(request, 'registration/registration_form.html', {'form': form})
+

@@ -53,6 +53,12 @@ class HomePageTest(TestCase):
 		response = client.get(tag.get_absolute_url())
 		self.assertEqual(response.status_code, 200)
 """
+	def test_post_create_with_view(self):
+		post = Post(title='test', text='This is a test', created_date=timezone.now(), published_date=timezone.now())
+		post.save()
+		response = self.client.get(post.get_absolute_url())
+		self.assertIn(b'This is a test', response.content)
+
 	def test_blog_url_resolvers_to_blog_post_edit(self):
 		found = resolve('/post/edit/')
 		self.assertEqual(found.func, post_edit)
