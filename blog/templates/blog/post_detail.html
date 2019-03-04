@@ -1,4 +1,5 @@
 {% extends 'blog/base.html' %}
+{% load staticfiles %}
 {% block content %}
 	
 		<div class="blog col-lg-11">
@@ -13,6 +14,7 @@
 			{% endif %}
 			<span>{{ post.views }} view{{ post.views|pluralize }}</span>  
 			<span>{{ post.comments.count }} comment{{ post.comments.count|pluralize }}</span>
+			<img src="{% static 'post.img_link' %}" alt="images">
 			<h1>{{ post.title }}</h1>
 			<p>{{ post.text|safe|linebreaksbr }}</p>
 			<div class = "badge-list">
