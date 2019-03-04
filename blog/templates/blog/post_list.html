@@ -1,6 +1,18 @@
 {% extends 'blog/base.html' %}
+{% load staticfiles %}
 {% block content %}
-
+<script type="text/javascript" src="{% static 'js/main.js' %}"></script>
+	<div class="image">
+		<img id="placeholder" src="{% static 'images/logo.jpeg' %}" alt="logo of django">
+	</div>
+	<div>
+		<ul>
+			<li><a href="{% static 'images/logo.jpeg' %}" onclick="showPic(this); return false;">django</a></li>
+			<li><a href="{% static 'images/google.jpeg' %}" onclick="showPic(this); return false;">google</a></li>
+			<li><a href="{% static 'images/facebook.jpeg' %}" onclick="showPic(this); return false;">facebook</a></li>
+			<li><a href="{% static 'images/microsoft.jpeg' %}" onclick="showPic(this); return false;">microsoft</a></li>
+		</ul>
+	</div>
 	<div class="row">
 			{% if error_msg %}
 				<p>{{ error_msg }}</p>
