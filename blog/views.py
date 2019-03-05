@@ -3,6 +3,7 @@ import markdown
 from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
 from .models import Post, Comment, Tag
+from django.contrib.auth.models import User
 from .forms import PostForm, CommentForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
@@ -236,4 +237,8 @@ def register(request):
 	else:
 		form = UserCreationForm()
 	return render(request, 'registration/registration_form.html', {'form': form})
+
+def user_profile(request):
+	user = request.user
+	return render(request, 'blog/user_profile.html', {'user': user})
 

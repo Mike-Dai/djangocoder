@@ -45,7 +45,11 @@
 			    </form>
 			    {% if user.is_authenticated %}
 			    <div class="nav-user">
-			    	Hello, {{ user.username }} !
+			    	Hello, 
+			    	<a href="{% url 'user_profile' %}">
+			    		{{ user.username }}
+			    	</a> 
+			    	!
 			    </div>
 			    {% endif %}
 			  </div>
