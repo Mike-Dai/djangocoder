@@ -1,27 +1,29 @@
 {% extends 'blog/base.html' %}
 {% block content %}
-<table class="user-profile">
-	<tr>
-		<td>Username:</td>
-		<td>{{ user.username }}</td>
-	</tr>
-	{% if user.first_name %}
-	<tr>
-		<td>First name:</td>
-		<td>{{ user.first_name }}</td>
-	</tr>
-	{% endif %}
-	{% if user.last_name %}
-	<tr>
-		<td>Last name:</td>
-		<td>{{ user.last_name }}</td>
-	{% endif %}
-	</tr>
-	{% if user.email_address %}
-	<tr>
-		<td>Email address</td>
-		<td>{{ user.email_address }}</td>
-	</tr>
-	{% endif %}
-</table>
+<div class="user-profile">
+	<table>
+		<tr>
+			<td>Username:</td>
+			<td>{{ user.username }}</td>
+		</tr>
+		{% if user.first_name %}
+		<tr>
+			<td>First name:</td>
+			<td>{{ user.first_name }}</td>
+		</tr>
+		{% endif %}
+		{% if user.last_name %}
+		<tr>
+			<td>Last name:</td>
+			<td>{{ user.last_name }}</td>
+		{% endif %}
+		</tr>
+		{% if user.email %}
+		<tr>
+			<td>Email address:</td>
+			<td>{{ user.email }}</td>
+		</tr>
+		{% endif %}
+	</table>
+</div>
 {% endblock %}

@@ -126,13 +126,18 @@
 	margin-right:20px;
 	color:white;
 }
+.nav-profile {
+	margin-left:20px;
+	margin-right:20px;
+	color:white;	
+}
 .image {
 	margin: 2%;
 }
 .user-profile {
 	background-color: white;
-	margin: 5%;
-	padding:5%;
+	margin: 2%;
+	padding:3%;
 	border-radius: 5px;
 }
 textarea {
