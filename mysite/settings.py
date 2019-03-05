@@ -130,3 +130,5 @@ NOSE_ARGS = [
     '--with-coverage',
     '--cover-package=blog',
 ]
+
+#AUTH_USER_MODEL = "blog.MyUser"

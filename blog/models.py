@@ -1,6 +1,10 @@
 from django.db import models
 from django.utils import timezone
 from django.urls import reverse
+from django.contrib.auth.models import User
+from django.contrib.auth.models import (
+	BaseUserManager, AbstractBaseUser
+)
 
 class Tag(models.Model):
 	name = models.CharField(max_length=100)
@@ -49,4 +53,9 @@ class Comment(models.Model):
     def __str__(self):
         return self.text
 
-	
+class Profile(models.Model):
+	user = models.OneToOneField(User, on_delete=models.CASCADE)
+	level = models.PositiveIntegerField(default=0)
+
+class MyUser(AbstractBaseUser):
+	age = models.PositiveIntegerField(default=0)
