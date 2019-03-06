@@ -3,7 +3,28 @@
 	<div>
 		<form method="POST">
 			{% csrf_token %}
-			{{ form.as_p }}
+			{{ form.errors }}
+			<div>
+				<label>title</label>
+				{{ form.title }}
+			</div>
+			<div class="fieldWrapper">
+				<label>tags</label>
+				<!--
+				<input type="checkbox"/>python
+				<input type="checkbox"/>django
+				<input type="checkbox"/>flask
+				-->
+				{{ form.tags }}
+			</div>
+			<div class="fieldWrapper">
+				<label>img_link</label>
+				{{ form.img_link }}
+			</div>
+			<div class="fieldWrapper">
+				<label style = "float: left;">text</label>
+				{{ form.text }}
+			</div>			
 			<div style = "text-align: center;">
 				<button class="btn btn-primary" type="submit">Save</button>
 			</div>

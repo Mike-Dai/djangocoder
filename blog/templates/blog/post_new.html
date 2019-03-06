@@ -5,11 +5,11 @@
 			{% csrf_token %}
 			{{ form.errors }}
 			<div class="fieldWrapper">
-				<label for="{{ form.title }}">title</label>
+				<label>title</label>
 				{{ form.title }}
 			</div>
 			<div class="fieldWrapper">
-				<label for="{{ form.tags }}">tags</label>
+				<label>tags</label>
 				<!--
 				<input type="checkbox"/>python
 				<input type="checkbox"/>django
@@ -18,11 +18,11 @@
 				{{ form.tags }}
 			</div>
 			<div class="fieldWrapper">
-				<label for="{{ form.img_link }}">img_link</label>
+				<label>img_link</label>
 				{{ form.img_link }}
 			</div>
 			<div class="fieldWrapper">
-				<label for="{{ form.text }}" style = "float: left;">text</label>
+				<label style = "float: left;">text</label>
 				{{ form.text }}
 				<div style = "text-align: center;">
 					<button class="btn btn-primary" type="submit">Save</button>
