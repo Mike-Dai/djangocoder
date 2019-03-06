@@ -160,6 +160,7 @@ def add_comment(request, pk):
 		form = CommentForm(request.POST)
 		if form.is_valid():
 			comment = form.save(commit=False)
+			comment.author = request.user
 			comment.created_date = timezone.now()
 			comment.post = post
 			comment.approve()

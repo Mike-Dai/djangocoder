@@ -3,16 +3,9 @@
 <div>
 	<form method="POST">
 		{% csrf_token %}
-		<table>
-			<tr>
-				<td class="form-label">author: </td>
-				<td class="form-input"><input type="text"/></td>
-			</tr>
-			<tr>
-				<td class="form-label">text: </td>
-				<td class="form-input"><textarea></textarea></td>
-			</tr>
-		</table>
+		<div align="center">
+			<textarea placeholder="Say something to author ..."></textarea>
+		</div>
 		<div style = "text-align: center;">
 			<button class="btn btn-primary" type="submit">Comment</button>
 		</div>
