@@ -1,10 +1,12 @@
 {% extends 'blog/base.html' %}
 {% block content %}
 <div>
-	<form method="POST">
+	<form action="" method="POST">
 		{% csrf_token %}
-		<div align="center">
-			<textarea placeholder="Say something to author ..."></textarea>
+		<div class="fieldWrapper" align="center">
+			{{ form.errors }}
+			<label for="{{ form.text }}" > text:</label>
+			{{ form.text }}
 		</div>
 		<div style = "text-align: center;">
 			<button class="btn btn-primary" type="submit">Comment</button>

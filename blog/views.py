@@ -1,6 +1,6 @@
 import markdown
 
-from django.shortcuts import render, get_object_or_404, redirect
+from django.shortcuts import render, get_object_or_404, redirect, HttpResponse
 from django.utils import timezone
 from .models import Post, Comment, Tag
 from django.contrib.auth.models import User
@@ -158,15 +158,20 @@ def add_comment(request, pk):
 	post = Post.objects.get(pk=pk)
 	if request.method == "POST":
 		form = CommentForm(request.POST)
+		#return HttpResponse(form.errors)
+		#print(form.errors)
 		if form.is_valid():
+			#return HttpResponse(form.is_valid())
 			comment = form.save(commit=False)
 			comment.author = request.user
 			comment.created_date = timezone.now()
 			comment.post = post
-			comment.approve()
+			#comment.text = form.text
+			#comment.approve()
 			comment.save()
 			return redirect('post_detail', pk=post.pk)
 	else:
+		#return HttpResponse(request.method)
 		form = CommentForm()
 	return render(request, 'blog/add_comment.html', {'form': form})
 
