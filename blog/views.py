@@ -183,14 +183,14 @@ def add_comment(request, pk):
 		form = CommentForm()
 	return render(request, 'blog/add_comment.html', {'form': form})
 
-@login_required
+@staff_member_required
 def approve_comment(request,pk):
 	comment = get_object_or_404(Comment, pk=pk)
 	post = comment.post
 	comment.approve()
 	return redirect('post_detail',pk=post.pk)
 
-@login_required
+@staff_member_required
 def remove_comment(request,pk):
 	comment = get_object_or_404(Comment, pk=pk)
 	post = comment.post

@@ -46,12 +46,7 @@
 				<div class="comment">
 					<p class="text-muted mb-2 f-12">
 					{{ comment.author }} {{ comment.created_date }}
-					{% if not comment.approved_comment %}
-						<!--
-						<a href="#">
-							<input class="btn btn-outline-primary btn-sm"  type="button" value="Approve"/>
-						</a>
-						-->
+					{% if not comment.approved_comment and user.is_staff %}
 						<a href="{% url 'remove_comment' pk=comment.pk %}">
 							<input class="btn btn-outline-danger btn-sm" type="button" value="Remove"/>
 						</a>
