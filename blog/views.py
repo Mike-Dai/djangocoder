@@ -10,6 +10,8 @@ from django.contrib.auth.forms import UserCreationForm
 from django.views.generic import ListView, DetailView
 from django.core.paginator import Paginator
 from django.db.models import Q
+from django.http import Http404
+from django.contrib.admin.views.decorators import staff_member_required
 
 class IndexView(ListView):
 	model = Post
@@ -108,46 +110,52 @@ def next_post(request, pk):
 
 @login_required
 def post_new(request):
-	if request.method == 'POST':
-		form = PostForm(request.POST)
-		if form.is_valid():
-			post = form.save(commit=False)
-			post.author = request.user
-			#post.published_date = timezone.now()
-			post.save()
-			return redirect('post_detail', pk=post.pk)
+	if request.user.is_staff or request.user.is_superuser:
+		if request.method == 'POST':
+			form = PostForm(request.POST)
+			if form.is_valid():
+				post = form.save(commit=False)
+				post.author = request.user
+				#post.published_date = timezone.now()
+				post.save()
+				return redirect('post_detail', pk=post.pk)
+		else:
+			form = PostForm()
 	else:
-		form = PostForm()
+		raise Http404
 	return render(request, 'blog/post_new.html',{'form': form})
 
 @login_required
 def post_edit(request, pk):
-	post = get_object_or_404(Post, pk=pk)
-	if request.method == "POST":
-		form = PostForm(request.POST, instance=post)
-		if form.is_valid():
-			post = form.save(commit=False)
-			post.author = request.user
-			#post.published_date = timezone.now()
-			post.save()
-			return redirect('post_detail', pk=post.pk)
+	if request.user.is_staff or request.user.is_superuser:
+		post = get_object_or_404(Post, pk=pk)
+		if request.method == "POST":
+			form = PostForm(request.POST, instance=post)
+			if form.is_valid():
+				post = form.save(commit=False)
+				post.author = request.user
+				#post.published_date = timezone.now()
+				post.save()
+				return redirect('post_detail', pk=post.pk)
+		else:
+			form = PostForm(instance=post)
 	else:
-		form = PostForm(instance=post)
+		raise Http404
 	return render(request, 'blog/post_edit.html',{'form': form})
 
-@login_required
+@staff_member_required
 def post_draft_list(request):
 	posts = Post.objects.filter(published_date__isnull=True).order_by('created_date')
 	return render(request, 'blog/post_list.html', {'posts': posts})
 
-@login_required
+@staff_member_required
 def post_publish(request, pk):
 	post = get_object_or_404(Post,pk=pk)
 	post.published_date = timezone.now()
 	post.save()
 	return redirect('post_detail', pk=post.pk)
 
-@login_required
+@staff_member_required
 def post_delete(request, pk):
 	post = get_object_or_404(Post, pk=pk)
 	post.delete()
@@ -244,6 +252,7 @@ def register(request):
 		form = UserCreationForm()
 	return render(request, 'registration/registration_form.html', {'form': form})
 
+@login_required
 def user_profile(request):
 	user = request.user
 	return render(request, 'blog/user_profile.html', {'user': user})
