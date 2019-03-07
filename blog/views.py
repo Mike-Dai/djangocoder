@@ -70,6 +70,7 @@ class IndexView(ListView):
 			'right_has_more': right_has_more,
 			'first': first,
 			'last': last,
+			'page_range': page_range,
 		}
 		return data
 """

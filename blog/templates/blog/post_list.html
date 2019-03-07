@@ -72,16 +72,19 @@
 				{% empty %}
 					<p>No post currently!</p>
 				{% endfor %}
-				{% if is_paginated %}
+				
 				<div class="text-xs-center">
 					<ul class="pagination justify-content-center">
-					    <!--<li class="page-item"><a class="page-link" href="#">Previous</a></li>-->
+					    <!--<li class="page-item"><a class="page-link" href="#">Previous</a></li>
 					    <li class="page-item"><a class="page-link" href="?page=1">1</a></li>
 					    <li class="page-item"><a class="page-link" href="?page=2">2</a></li>
 					    <li class="page-item"><a class="page-link" href="?page=3">3</a></li>
 					    <li class="page-item"><a class="page-link" href="?page=4">4</a></li>
 					    <li class="page-item"><a class="page-link" href="?page=5">5</a></li>
-					    <!--<li class="page-item"><a class="page-link" href="#">Next</a></li>-->
+					    <li class="page-item"><a class="page-link" href="#">Next</a></li>-->
+					    {% for i in page_range %}
+					    	<li class="page-item"><a class="page-link" href="?page={{ i }}">{{ i }}</a></li>
+					    {% endfor %}
 					</ul>
 				</div>
 				<!--
@@ -129,7 +132,7 @@
 					</div>
 				</nav>
 			-->
-				{% endif %}
+				
 			</div>
 
 	</div>
