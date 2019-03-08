@@ -40,6 +40,7 @@ INSTALLED_APPS = (
     'django_registration',
     'django_nose',
     'rest_framework',
+    'rest_framework_swagger',
     'haystack',
     'blog',
 )

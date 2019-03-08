@@ -4,6 +4,7 @@ from django.contrib import admin
 from rest_framework import routers, serializers, viewsets
 from django.contrib.auth import views as auth_view
 from blog.models import Post, Tag, Comment
+from rest_framework_swagger.views import get_swagger_view
 #from django_registration.backends.one_step import RegistrationView
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
@@ -48,6 +49,8 @@ router.register(r'post', PostViewSet)
 router.register(r'tag', TagViewSet)
 router.register(r'comment', CommentViewSet)
 
+schema_view = get_swagger_view(title='djangocoder API')
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^api/', include(router.urls)),
@@ -58,5 +61,6 @@ urlpatterns = [
     url(r'^accounts/logout/', auth_view.LogoutView.as_view(next_page='/'), name='logout'),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     url(r'', include('blog.urls')),
+    url(r'^schema/', schema_view),
     #url(r'^search/', include('haystack.urls')),
 ]
