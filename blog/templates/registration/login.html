@@ -4,17 +4,16 @@
     {% if form.errors %}
         <p>Your username and password didn't match. Please try again.</p>
     {% endif %}
-
     <form class="login-form" method="post" action="{% url 'login' %}">
     {% csrf_token %}
         <table>
         <tr>
-            <td>{{ form.username.label_tag }}</td>
-            <td>{{ form.username }}</td>
+            <td><label id="username-label">Username:</label></td>
+            <td id="username">{{ form.username }}</td>
         </tr>
         <tr>
-            <td>{{ form.password.label_tag }}</td>
-            <td>{{ form.password }}</td>
+            <td><label id="password-label">Password:</label></td>
+            <td id="password">{{ form.password }}</td>
         </tr>
         </table>
         <div style = "text-align: center;">
@@ -22,4 +21,20 @@
         </div>
         <input type="hidden" name="next" value="{{ next }}" />
     </form>
+    <script>
+        var username = document.getElementById("username");
+        username.setAttribute("placeholder", "username");
+        //username.setAttribute("height", "200px");
+        var password = document.getElementById("password");
+        password.setAttribute("placeholder", "password");
+        //password.setAttribute("height", "200px");
+        //labels = document.getElementsByTagName("label");
+        username_label = document.getElementById("username-label");
+        password_label = document.getElementById("password-label");
+        width = window.innerWidth || document.body.clientWidth;
+        if (width < 50000) {
+            username_label.setAttribute("width", "200px");
+            password_label.setAttribute("color", "red");
+        }
+    </script>
 {% endblock %}

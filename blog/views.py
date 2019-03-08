@@ -100,14 +100,14 @@ class PostDetailView(DetailView):
 		return post
 
 def previous_post(request, pk):
-	newpk = pk - 1
-	post = get_object_or_404(Post, pk=newpk)
-	return render(request, 'blog/post_detail', {'post':post})
+	post = get_object_or_404(Post, pk=pk)
+	prev_post = post.filter(pk__lt=post.pk)[0:1]
+	return render(request, 'blog/post_detail', {'prev_post':prev_post})
 
 def next_post(request, pk):
-	newpk = pk + 1
-	post = get_object_or_404(Post, pk=newpk)
-	return render(request, 'blog/post_detail', {'post':post})
+	post = get_object_or_404(Post, pk=pk)
+	next_post = post.filter(pk__gt=post.pk)[0:1]
+	return render(request, 'blog/post_detail', {'next_post':next_post})
 
 @login_required
 def post_new(request):
