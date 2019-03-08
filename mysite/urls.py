@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 from django.contrib import admin
 from rest_framework import routers, serializers, viewsets
 from django.contrib.auth import views as auth_view
-from blog.models import Post
+from blog.models import Post, Tag, Comment
 #from django_registration.backends.one_step import RegistrationView
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
@@ -24,9 +24,29 @@ class PostViewSet(viewsets.ModelViewSet):
 	queryset = Post.objects.all()
 	serializer_class = PostSerializer
 
+class TagSerializer(serializers.HyperlinkedModelSerializer):
+	class Meta:
+		model = Tag
+		fields = ('name',)
+
+class TagViewSet(viewsets.ModelViewSet):
+	queryset = Tag.objects.all()
+	serializer_class = TagSerializer
+
+class CommentSerializer(serializers.HyperlinkedModelSerializer):
+	class Meta:
+		model = Comment
+		fields = ('post', 'author', 'text', 'created_date')
+
+class CommentViewSet(viewsets.ModelViewSet):
+	queryset = Comment.objects.all()
+	serializer_class = CommentSerializer
+
 router = routers.DefaultRouter()
 router.register(r'users', UserViewSet)
 router.register(r'post', PostViewSet)
+router.register(r'tag', TagViewSet)
+router.register(r'comment', CommentViewSet)
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
