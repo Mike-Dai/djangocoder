@@ -13,7 +13,7 @@
 	    <title>djangocoder</title>
 	</head>
 	<body>
-		<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 			<a class="navbar-brand" href="/">Django Coder Blogs</a>
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			    <ul class="navbar-nav mr-auto">
@@ -59,28 +59,30 @@
 			    {% endif %}
 			  </div>
 		</nav>
+		
 		<div class="sidebar-container">
-			<div class="sidebar col-md-10" align="center">
-				<div class="widget widget-recent-posts">
+		
+			<div class="sidebar" align="center">
+				<div class="widget widget-recent-posts" align="center">
 					<h3 class="widget-title">latest posts</h3>
 				    {% get_recent_posts as recent_post_list %}
 			    	<ul style="padding-left:5%">
 			    	{% for post in recent_post_list %}
-			    		<li>
-			      			<a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a>
-			    		</li>
+			    		<p>
+			      			<a class="sidebar-link" href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a>
+			    		</p>
 			    	{% empty %}
 			    		no post!
 			    	{% endfor %}
 			  		</ul>
 				</div>
-				<div class="widget widget-archives">
+				<div class="widget widget-archives" align="center">
 					<h3 class="widget-title">archives</h3>
 				    {% archives as date_list %}
 			    	<ul style="padding-left:5%">
 			    	{% for date in date_list %}
 			    		<li>
-			      			<a href="{% url 'archives' date.year date.month %}">{{ date.year }}-{{ date.month }}</a>
+			      			<a class="sidebar-link" href="{% url 'archives' date.year date.month %}">{{ date.year }}-{{ date.month }}</a>
 			    		</li>
 			    	{% empty %}
 			    		no archive!
@@ -101,7 +103,9 @@
 			  		</ul>
 				</div>				
 			</div>
+		
 		</div>
+		
 		<div class="container col-lg-9">
 			{% block content %}
 			{% endblock %}
