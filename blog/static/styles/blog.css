@@ -3,7 +3,7 @@
 	display: none;
 }
 */
-
+/*
 @media only screen and (max-width: 1200px) {
 	.sidebar-container {
 		display: none;
@@ -14,7 +14,7 @@
 		background-color: white;
 	}
 }
-
+*/
 
 /*
 @media screen and (min-width: 1495px) {
@@ -23,19 +23,22 @@
 	}
 }
 */
+body {
+	background-color: #f4f4f4;
+}
 .container {
-	background-color: #80bdff;
+	background-color: #f4f4f4;
 	margin-top: 3%;
 	margin-left:3%;
 	margin-right:3%;
 	/*padding:2%;*/
 	padding-top:2%;
 	padding-bottom:2%;
-	border-radius: 5px;
+	/*border-radius: 5px;*/
 }
 .sidebar-container {
 	float:right;
-	background-color: #80bdff;
+	background-color: #f4f4f4;
 	width:16%;
 	margin-top: 3%;
 	margin-right:3%;
@@ -43,6 +46,9 @@
 	padding-top: 1%;
 	padding-bottom: 1%;
 	border-radius: 5px;	
+}
+.sidebar:hover {
+	box-shadow: 2px 2px 10px #848484;
 }
 .widget {
 	padding:5%;
@@ -58,8 +64,11 @@
 	margin-right:30px;
 	*/
 	margin:3%;
-	border-radius: 5px;
+	/*border-radius: 5px;*/
 	width: 95%;
+}
+.media:hover {
+	box-shadow: 2px 2px 10px #848484;
 }
 .summary-list {
 	/*
@@ -74,13 +83,13 @@
 	width:100%;
 	margin: 2%;
 	padding:5%;
-	border-radius: 5px;
+	/*border-radius: 5px;*/
 }
 .comment-list {
 	background-color: white;
 	margin: 2%;
 	padding:5%;
-	border-radius: 5px;
+	/*border-radius: 5px;*/
 }
 .comment {
 	margin: 2%;
@@ -93,7 +102,7 @@
 	margin: 7%;
 	padding:3%;
 	text-align: left;
-	border-radius: 5px;
+	/*border-radius: 5px;*/
 }
 .badge-list {
 	margin:5%;
@@ -103,13 +112,13 @@
 	background-color: white;
 	margin: 5%;
 	padding:5%;
-	border-radius: 5px;
+	/*border-radius: 5px;*/
 }
 .login-form {
 	background-color: white;
 	margin: 5%;
 	padding:5%;
-	border-radius: 5px;
+	/*border-radius: 5px;*/
 }
 .form-label {
 	float:left;
@@ -141,7 +150,7 @@
 	background-color: white;
 	margin: 2%;
 	padding:3%;
-	border-radius: 5px;
+	/*border-radius: 5px;*/
 }
 textarea {
 	width: 94%;
