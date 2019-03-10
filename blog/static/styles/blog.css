@@ -85,7 +85,7 @@ body {
 .blog {
 	background-color: white;
 	width:100%;
-	margin: 2%;
+	margin: 0 0 2% 2%;
 	padding:5%;
 	/*border-radius: 5px;*/
 }
@@ -137,10 +137,19 @@ body {
 .pagination {
 	margin:20px;
 }
+.navbar {
+	height: 47px;
+}
+.nav-item {
+	font-family:"Roboto", Corbel, Avenir, "Lucida Grande", "Lucida Sans", sans-serif;
+	font-weight:700;
+	font-size:13px;
+}
 .nav-user {
-	margin-left:20px;
-	margin-right:20px;
+	margin-left:1%;
+	margin-right:1%;
 	color:white;
+	font-weight:400;
 }
 .nav-profile {
 	margin-left:20px;
@@ -184,6 +193,19 @@ body {
 	margin-left:3%;
 	margin-right:3%;
 }
+.carousel-item {
+	overflow:hidden;
+	width:747px;
+	height:280px;
+}
+.form-control {
+	height:30px;
+}
+.btn-outline-search {
+	color:#ffe484;
+	border-color:#ffe484;
+	height:30px;
+}
 textarea {
 	width: 94%;
 	height: 300px;
@@ -193,9 +215,6 @@ tr {
 }
 button {
 	margin-top:20px;
-}
-nav-link {
-	font-weight: 700;
 }
 li {
 	list-style: none;
