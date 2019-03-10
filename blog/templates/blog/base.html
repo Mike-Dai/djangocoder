@@ -62,21 +62,21 @@
 		
 		<div class="sidebar-container">
 		
-			<div class="sidebar" align="center">
-				<div class="widget widget-recent-posts" align="center">
+			<div class="sidebar" align="left">
+				<div class="widget widget-recent-posts" align="left">
 					<h3 class="widget-title">latest posts</h3>
 				    {% get_recent_posts as recent_post_list %}
 			    	<ul style="padding-left:5%">
 			    	{% for post in recent_post_list %}
-			    		<p>
-			      			<a class="sidebar-link" href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a>
-			    		</p>
+			    		<li>
+			    			<a class="sidebar-link" href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a>
+			    		</li>
 			    	{% empty %}
 			    		no post!
 			    	{% endfor %}
 			  		</ul>
 				</div>
-				<div class="widget widget-archives" align="center">
+				<div class="widget widget-archives" align="left">
 					<h3 class="widget-title">archives</h3>
 				    {% archives as date_list %}
 			    	<ul style="padding-left:5%">
@@ -89,10 +89,10 @@
 			    	{% endfor %}
 			  		</ul>
 				</div>
-				<div class="widget widget-tags">
+				<div class="widget widget-tags" align="left">
 					<h3 class="widget-title">tags</h3>
 				    {% tags as tag_list %}
-			    	<ul style="padding-left:7%">
+			    	<ul style="padding-left:0">
 			    	{% for tag in tag_list %}
 			    		<div>
 			    			<a href="{% url 'tag_detail' pk=tag.pk%}" class="badge badge-pill badge-warning">{{ tag.name }} </a>
