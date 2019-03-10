@@ -27,20 +27,23 @@ body {
 	background-color: #f4f4f4;
 }
 .container {
+	float:right;
 	background-color: #f4f4f4;
-	margin-top: 3%;
+	margin-top: 1%;
 	margin-left:3%;
 	margin-right:0;
 	/*padding:2%;*/
 	padding-top:2%;
 	padding-bottom:2%;
+	padding-left:0;
+	padding-right:1%;
 	/*border-radius: 5px;*/
 }
 .sidebar-container {
 	float:right;
 	background-color: #f4f4f4;
 	width:16%;
-	margin-top: 3%;
+	margin-top: 1%;
 	margin-right:3%;
 	margin-left:0;
 	padding-top: 1%;
@@ -176,6 +179,10 @@ body {
 }
 .my-page-link:hover {
 	color: #ff8000;
+}
+.carousel {
+	margin-left:3%;
+	margin-right:3%;
 }
 textarea {
 	width: 94%;
