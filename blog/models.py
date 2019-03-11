@@ -18,7 +18,7 @@ class Tag(models.Model):
 class Post(models.Model):
 	title = models.CharField(max_length=200)
 	author = models.ForeignKey('auth.User', on_delete=models.CASCADE)
-	img_link = models.CharField(default='images/logo.jpeg', max_length=255)
+	img_link = models.CharField(default='/static/images/tide.jpeg', max_length=255)
 	text = models.TextField()
 	created_date = models.DateTimeField(default=timezone.now)
 	published_date = models.DateTimeField(blank=True, null=True)

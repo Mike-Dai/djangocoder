@@ -140,10 +140,14 @@ body {
 .navbar {
 	height: 47px;
 }
+.nav-link {
+
+}
 .nav-item {
 	font-family:"Roboto", Corbel, Avenir, "Lucida Grande", "Lucida Sans", sans-serif;
 	font-weight:700;
 	font-size:13px;
+	font-width:50%;
 }
 .nav-user {
 	margin-left:1%;
@@ -205,6 +209,27 @@ body {
 	color:#ffe484;
 	border-color:#ffe484;
 	height:30px;
+}
+.post-detail-image {
+	overflow:hidden;
+	width:650px;
+	height:200px;
+}
+#nav-left {
+	transform:scale(.8,1);
+}
+#sidebar-author {
+	color:#6c757d;
+}
+#post-head {
+	color:#6c757d;
+}
+#post-image {
+	float:left;
+}
+#post-content {
+	float:left;
+	margin-left:5%;
 }
 textarea {
 	width: 94%;

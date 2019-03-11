@@ -3,18 +3,22 @@
 {% block content %}
 	
 		<div class="blog col-lg-11">
-			{% if post.published_date %}
-				<p>published: {{ post.published_date }}</p>
-			{% else %}
-			<div>
-				<a href="{% url 'post_publish' pk=post.pk %}">
-					<input type="button" class="btn btn-primary" value="Publish"/>
-				</a>
+			<div id="post-head">
+				{% if post.published_date %}
+					<p>{{ post.published_date }}</p>
+				{% else %}
+				<div>
+					<a href="{% url 'post_publish' pk=post.pk %}">
+						<input type="button" class="btn btn-primary" value="Publish"/>
+					</a>
+				</div>
+				{% endif %}
+				<span>{{ post.views }} view{{ post.views|pluralize }}</span>  
+				<span>{{ post.comments.count }} comment{{ post.comments.count|pluralize }}</span>
 			</div>
-			{% endif %}
-			<span>{{ post.views }} view{{ post.views|pluralize }}</span>  
-			<span>{{ post.comments.count }} comment{{ post.comments.count|pluralize }}</span>
-			<img src="{% static 'post.img_link' %}" alt="images">
+			<div class="post-detail-image">
+				<img src="{{ post.img_link }}" alt="images">
+			</div>
 			<h1>{{ post.title }}</h1>
 			<p>{{ post.text|safe|linebreaksbr }}</p>
 			<div class = "badge-list">
