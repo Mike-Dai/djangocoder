@@ -15,7 +15,7 @@ from django.contrib.admin.views.decorators import staff_member_required
 
 class IndexView(ListView):
 	model = Post
-	template_name = 'blog/post_list.html'
+	template_name = 'blog/home.html'
 	context_object_name = 'posts'
 	paginate_by = 2
 

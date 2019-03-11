@@ -2,34 +2,6 @@
 {% load staticfiles %}
 {% block content %}
 	<script type="text/javascript" src="{% static 'js/main.js' %}"></script>
-	<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-	  	<ol class="carousel-indicators">
-	    	<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-	    	<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-	    	<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-	  	</ol>
-	  	<div class="carousel-inner">
-	    	<div class="carousel-item active">
-	      	<img class="d-block w-100" src="{% static 'images/tide.jpeg' %}" alt="First slide">
-	    	</div>
-	    	<div class="carousel-item">
-	      		<img class="d-block w-100" src="{% static 'images/red.jpeg' %}" alt="Second slide">
-	    	</div>
-	    	<div class="carousel-item">
-	      		<img class="d-block w-100" src="{% static 'images/lake.jpeg' %}" alt="Third slide">
-	    	</div>
-	    </div>
-		<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-	    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-	    <span class="sr-only">Previous</span>
-		</a>
-		<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-	    	<span class="carousel-control-next-icon" aria-hidden="true"></span>
-	    	<span class="sr-only">Next</span>
-		</a>
-	</div>
-
-
 <!--
 	<div class="image" align="center">
 		<img id="placeholder" src="{% static 'images/logo.jpeg' %}" alt="logo of django" width="400" height="200">
@@ -74,18 +46,15 @@
 				
 				<div class="text-xs-center">
 					<ul class="pagination justify-content-center">
-					    <!--<li class="page-item"><a class="page-link" href="#">Previous</a></li>
-					    <li class="page-item"><a class="page-link" href="?page=1">1</a></li>
-					    <li class="page-item"><a class="page-link" href="?page=2">2</a></li>
-					    <li class="page-item"><a class="page-link" href="?page=3">3</a></li>
-					    <li class="page-item"><a class="page-link" href="?page=4">4</a></li>
-					    <li class="page-item"><a class="page-link" href="?page=5">5</a></li>
-					    <li class="page-item"><a class="page-link" href="#">Next</a></li>-->
 					    {% for i in page_range %}
 					    	<li class="page-item"><a class="page-link" href="?page={{ i }}">{{ i }}</a></li>
 					    {% endfor %}
 					</ul>
 				</div>
+
+				
+			</div>
+	</div>
 				<!--
 				<nav aria-label="Page navigation example">
 					<div>
@@ -131,8 +100,4 @@
 					</div>
 				</nav>
 			-->
-				
-			</div>
-	</div>
-
 {% endblock %}
