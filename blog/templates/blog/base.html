@@ -62,6 +62,17 @@
 
 		<div class="sidebar-container">
 			<div class="sidebar" align="left">
+				<div class="widget">
+					<h3 class="widget-title">Author</h3>
+					<ul style="padding-left:5%">
+						<li>Michael Dai</li>
+						<li>HDU</li>
+						{% total_visits as visits_count %}
+						<li>visits: {{ visits_count }}</li>
+					</ul>
+				</div>
+			</div>
+			<div class="sidebar" align="left">
 				<div class="widget widget-recent-posts" align="left">
 					<h3 class="widget-title">latest posts</h3>
 				    {% get_recent_posts as recent_post_list %}
