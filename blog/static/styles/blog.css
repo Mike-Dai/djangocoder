@@ -57,6 +57,8 @@ body {
 }
 .widget-title {
 	font-size:2vw;
+	border-bottom: 1px solid gray;
+	margin-bottom: 5%;
 }
 .media {
 	background-color: white;
@@ -201,6 +203,14 @@ body {
 	overflow:hidden;
 	width:650px;
 	height:200px;
+}
+.foot {
+	position:absolute;
+	bottom:0;
+	margin-top:6%;
+	width:1024px;
+	background-color: #343a40;
+	color: white;
 }
 #nav-left {
 	transform:scale(.8,1);
