@@ -32,12 +32,10 @@ body {
 	margin-top: 1%;
 	margin-left:3%;
 	margin-right:0;
-	/*padding:2%;*/
 	padding-top:2%;
 	padding-bottom:2%;
 	padding-left:0;
 	padding-right:1%;
-	/*border-radius: 5px;*/
 }
 .sidebar-container {
 	float:right;
@@ -62,22 +60,16 @@ body {
 }
 .media {
 	background-color: white;
-	/*
-	margin-bottom: 20px;
-	margin-left:30px;
-	margin-right:30px;
-	*/
-	margin:3%;
-	/*border-radius: 5px;*/
+	margin-top:0;
+	margin-bottom:3%;
+	margin-left:3%;
+	margin-right:3%;
 	width: 95%;
 }
 .media:hover {
 	box-shadow: 2px 2px 10px #848484;
 }
 .summary-list {
-	/*
-	padding: 3%;
-	*/
 	margin:1%;
 	width: 96%;
 	
@@ -87,13 +79,11 @@ body {
 	width:100%;
 	margin: 0 0 2% 2%;
 	padding:5%;
-	/*border-radius: 5px;*/
 }
 .comment-list {
 	background-color: white;
 	margin: 2%;
 	padding:5%;
-	/*border-radius: 5px;*/
 }
 .comment {
 	margin: 2%;
@@ -106,7 +96,6 @@ body {
 	margin: 7%;
 	padding:4%;
 	text-align: left;
-	/*border-radius: 5px;*/
 }
 .badge-list {
 	margin:5%;
@@ -116,13 +105,11 @@ body {
 	background-color: white;
 	margin: 5%;
 	padding:5%;
-	/*border-radius: 5px;*/
 }
 .login-form {
 	background-color: white;
 	margin: 5%;
 	padding:5%;
-	/*border-radius: 5px;*/
 }
 .form-label {
 	float:left;
@@ -167,7 +154,6 @@ body {
 	background-color: white;
 	margin: 2%;
 	padding:3%;
-	/*border-radius: 5px;*/
 }
 .post-title {
 	color: #21759b;
@@ -196,6 +182,7 @@ body {
 .carousel {
 	margin-left:3%;
 	margin-right:3%;
+	margin-bottom:4%;
 }
 .carousel-item {
 	overflow:hidden;
