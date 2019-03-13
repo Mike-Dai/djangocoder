@@ -1,0 +1,24 @@
+{% extends 'blog/base.html' %}
+{% block content %}
+<form method="POST">
+	{% csrf_token %}
+	{{ form.errors }}
+	<table>
+		<tr>
+			<td>First name:</td>
+			<td>{{ form.first_name }}</td>
+		</tr>
+		<tr>
+			<td>Last name:</td>
+			<td>{{ form.last_name }}</td>
+		</tr>
+		<tr>
+			<td>Email address:</td>
+			<td>{{ form.email }}</td>
+		</tr>
+	</table>
+	<div style = "text-align: center;">
+		<button class="btn btn-primary" type="submit">Save</button>
+	</div>
+</form>
+{% endblock %}

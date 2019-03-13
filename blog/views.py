@@ -4,7 +4,7 @@ from django.shortcuts import render, get_object_or_404, redirect, HttpResponse
 from django.utils import timezone
 from .models import Post, Comment, Tag
 from django.contrib.auth.models import User
-from .forms import PostForm, CommentForm
+from .forms import PostForm, CommentForm, ProfileForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
 from django.views.generic import ListView, DetailView
@@ -258,3 +258,15 @@ def user_profile(request):
 	user = request.user
 	return render(request, 'blog/user_profile.html', {'user': user})
 
+@login_required
+def profile_edit(request):
+	user = request.user
+	if request.method == "POST":
+		form = ProfileForm(request.POST, instance=user)
+		if form.is_valid():
+			user = form.save(commit=False)
+			user.save()
+			return redirect('user_profile')
+	else:
+		form = ProfileForm(instance=user)
+	return render(request, 'blog/profile_edit.html', {'form': form})
