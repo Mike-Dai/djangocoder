@@ -85,7 +85,7 @@ body {
 .comment-list {
 	background-color: white;
 	margin: 2%;
-	padding:5%;
+	padding:3%;
 }
 .comment {
 	margin: 2%;
@@ -211,6 +211,11 @@ body {
 	width:1024px;
 	background-color: #343a40;
 	color: white;
+}
+.comment-title {
+	border-bottom: solid 3px gray;
+	text-align: left;
+	font-weight: 700;
 }
 #nav-left {
 	transform:scale(.8,1);
