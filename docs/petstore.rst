@@ -64,10 +64,12 @@ Parameters
 |        |     }                                  |  
 +--------+----------------------------------------+
 
-Example Value
-+++++++++++++
 
-.. code-block ::
+:Name: body *required*
+
+:Example Value: Model
+
+.. code-block :: json
     {
       "id": 0,
       "category": {
