@@ -14,7 +14,6 @@ host: "petstore.swagger.io"
 basePath: "/v2"
 
 pet
----
 Everything about your Pets"
 
 Find out more: http://swagger.io
@@ -65,6 +64,29 @@ Parameters
 |        |     }                                  |  
 +--------+----------------------------------------+
 
+Example Value
++++++++++++++
+
+.. sourcecode:: js
+    {
+      "id": 0,
+      "category": {
+        "id": 0,
+        "name": "string"
+      },
+      "name": "doggie",
+      "photoUrls": [
+        "string"
+      ],
+      "tags": [
+        {
+          "id": 0,
+          "name": "string"
+        }
+      ],
+      "status": "available"
+    }
+
 Response
 ~~~~~~~~
 
@@ -77,6 +99,14 @@ Response
 |  405   |          Invalid input                 |
 |        |                                        |  
 +--------+----------------------------------------+
+
+
+.. csv-table :: Response
+
+  :header: "Code", "Description"
+  :width: 30, 80
+
+  "405", "Invalid Input"
 
 
       description: ""
