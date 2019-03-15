@@ -67,7 +67,7 @@ Parameters
 Example Value
 +++++++++++++
 
-.. sourcecode:: js
+.. code-block ::
     {
       "id": 0,
       "category": {
@@ -101,13 +101,11 @@ Response
 +--------+----------------------------------------+
 
 
-.. csv-table :: Response
-
-  :header: "Code", "Description"
-  :width: 30, 80
-
-  "405", "Invalid Input"
-
+========  ================================
+  Code                     Description    
+========  ================================
+  405      Invalid input 
+========  ================================
 
       description: ""
       operationId: "addPet"
