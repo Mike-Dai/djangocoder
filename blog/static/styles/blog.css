@@ -216,6 +216,7 @@ body {
 	border-bottom: solid 3px gray;
 	text-align: left;
 	font-weight: 700;
+	margin-bottom: 3%
 }
 #nav-left {
 	transform:scale(.8,1);
