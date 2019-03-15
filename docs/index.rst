@@ -11,7 +11,7 @@ Welcome to djangocoder's documentation!
    :caption: Contents:
 
    api
-
+   petstore
 
 
 Indices and tables
