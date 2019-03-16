@@ -26,27 +26,14 @@ Find out more: http://swagger.io
 
       Add a new pet to the store
 
-      Parameters
-      ~~~~~~~~~~
+Parameters
+~~~~~~~~~~
 
-      .. sourcecode:: js 
-          {
-            "id": 0,
-            "category": {
-              "id": 0,
-              "name": "string"
-            },
-            "name": "doggie",
-            "photoUrls": [
-              "string"
-            ],
-            "tags": [
-              {
-                "id": 0,
-                "name": "string"
-              }
-            ],
-            "status": "available"
+      :: 
+          int a, b;
+          a = 0;
+          for (int i = 0; i < a; i++) {
+            b += a;
           }
 
       +--------+----------------------------------------+
@@ -162,8 +149,8 @@ Find out more: http://swagger.io
       =========  ========================================================
 
 
-      Response
-      ~~~~~~~~
+Response
+~~~~~~~~
 
       +--------+----------------------------------------+
       |        |                                        |
