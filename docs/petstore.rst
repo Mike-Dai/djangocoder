@@ -80,6 +80,66 @@ Parameters
       "status": "available"
     }
 
+::
+
+    pragma solidity >=0.4.0 <0.7.0;
+
+    contract SimpleStorage {
+        uint storedData;
+
+        function set(uint x) public {
+            storedData = x;
+        }
+
+        function get() public view returns (uint) {
+            return storedData;
+        }
+    }
+
+
+=========  ========================================================
+body             Example Value
+=========  ========================================================
+\
+            ::
+                {
+                  "id": 0,
+                  "category": {
+                    "id": 0,
+                    "name": "string"
+                  },
+                  "name": "doggie",
+                  "photoUrls": [
+                    "string"
+                  ],
+                  "tags": [
+                    {
+                      "id": 0,
+                      "name": "string"
+                    }
+                  ],
+                  "status": "available"
+                }
+
+            ::
+
+                pragma solidity >=0.4.0 <0.7.0;
+
+                contract SimpleStorage {
+                    uint storedData;
+
+                    function set(uint x) public {
+                        storedData = x;
+                    }
+
+                    function get() public view returns (uint) {
+                        return storedData;
+                    }
+                }
+
+=========  ========================================================
+
+
 Response
 ~~~~~~~~
 
@@ -97,7 +157,7 @@ Response
 ========  ================================
   Code                     Description    
 ========  ================================
-  405      Invalid input 
+  405      ``Invalid input``
 ========  ================================
 
       description: ""
