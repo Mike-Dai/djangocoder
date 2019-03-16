@@ -61,24 +61,25 @@ Parameters
 :Example Value: Model
 
 ::
-    {
-      "id": 0,
-      "category": {
-        "id": 0,
-        "name": "string"
-      },
-      "name": "doggie",
-      "photoUrls": [
-        "string"
-      ],
-      "tags": [
-        {
-          "id": 0,
-          "name": "string"
-        }
-      ],
-      "status": "available"
-    }
+    <?xml version="1.0" encoding="UTF-8"?>
+    <Pet>
+      <id>0</id>
+      <Category>
+        <id>0</id>
+        <name>string</name>
+      </Category>
+      <name>doggie</name>
+      <photoUrl>
+        <photoUrl>string</photoUrl>
+      </photoUrl>
+      <tag>
+        <Tag>
+          <id>0</id>
+          <name>string</name>
+        </Tag>
+      </tag>
+      <status>available</status>
+    </Pet>
 
 ::
 
@@ -102,24 +103,25 @@ body             Example Value
 =========  ========================================================
 \
             ::
-                {
-                  "id": 0,
-                  "category": {
-                    "id": 0,
-                    "name": "string"
-                  },
-                  "name": "doggie",
-                  "photoUrls": [
-                    "string"
-                  ],
-                  "tags": [
-                    {
-                      "id": 0,
-                      "name": "string"
-                    }
-                  ],
-                  "status": "available"
-                }
+              <?xml version="1.0" encoding="UTF-8"?>
+                <Pet>
+                  <id>0</id>
+                  <Category>
+                    <id>0</id>
+                    <name>string</name>
+                  </Category>
+                  <name>doggie</name>
+                  <photoUrl>
+                    <photoUrl>string</photoUrl>
+                  </photoUrl>
+                  <tag>
+                    <Tag>
+                      <id>0</id>
+                      <name>string</name>
+                    </Tag>
+                  </tag>
+                  <status>available</status>
+                </Pet>
 
             ::
 
