@@ -24,145 +24,165 @@ Find out more: http://swagger.io
 
 .. http:post::  /pet
 
-Add a new pet to the store
+      Add a new pet to the store
 
-Parameters
-~~~~~~~~~~
+      Parameters
+      ~~~~~~~~~~
 
-+--------+----------------------------------------+
-|        |                                        |
-|  body  |            Example Value               |
-|        |                                        |
-+========+========================================+
-|        | .. sourcecode:: js                     |
-|        |     {                                  |
-|        |       "id": 0,                         |  
-|        |       "category": {                    |
-|        |         "id": 0,                       |
-|        |         "name": "string"               |  
-|        |       },                               |
-|        |       "name": "doggie",                |
-|        |       "photoUrls": [                   |
-|        |         "string"                       |
-|        |       ],                               |
-|        |       "tags": [                        |
-|        |         {                              |
-|        |           "id": 0,                     |
-|        |           "name": "string"             |
-|        |         }                              |
-|        |       ],                               |
-|        |       "status": "available"            |
-|        |     }                                  |  
-+--------+----------------------------------------+
+      .. sourcecode:: js 
+          {
+            "id": 0,
+            "category": {
+              "id": 0,
+              "name": "string"
+            },
+            "name": "doggie",
+            "photoUrls": [
+              "string"
+            ],
+            "tags": [
+              {
+                "id": 0,
+                "name": "string"
+              }
+            ],
+            "status": "available"
+          }
 
-
-:Name: body *required*
-
-:Example Value: Model
-
-::
-    <?xml version="1.0" encoding="UTF-8"?>
-    <Pet>
-      <id>0</id>
-      <Category>
-        <id>0</id>
-        <name>string</name>
-      </Category>
-      <name>doggie</name>
-      <photoUrl>
-        <photoUrl>string</photoUrl>
-      </photoUrl>
-      <tag>
-        <Tag>
-          <id>0</id>
-          <name>string</name>
-        </Tag>
-      </tag>
-      <status>available</status>
-    </Pet>
-
-::
-
-    pragma solidity >=0.4.0 <0.7.0;
-
-    contract SimpleStorage {
-        uint storedData;
-
-        function set(uint x) public {
-            storedData = x;
-        }
-
-        function get() public view returns (uint) {
-            return storedData;
-        }
-    }
+      +--------+----------------------------------------+
+      |        |                                        |
+      |  body  |            Example Value               |
+      |        |                                        |
+      +========+========================================+
+      |        | .. sourcecode:: js                     |
+      |        |     {                                  |
+      |        |       "id": 0,                         |  
+      |        |       "category": {                    |
+      |        |         "id": 0,                       |
+      |        |         "name": "string"               |  
+      |        |       },                               |
+      |        |       "name": "doggie",                |
+      |        |       "photoUrls": [                   |
+      |        |         "string"                       |
+      |        |       ],                               |
+      |        |       "tags": [                        |
+      |        |         {                              |
+      |        |           "id": 0,                     |
+      |        |           "name": "string"             |
+      |        |         }                              |
+      |        |       ],                               |
+      |        |       "status": "available"            |
+      |        |     }                                  |  
+      +--------+----------------------------------------+
 
 
-=========  ========================================================
-body             Example Value
-=========  ========================================================
-\
-            ::
-              <?xml version="1.0" encoding="UTF-8"?>
-                <Pet>
-                  <id>0</id>
-                  <Category>
-                    <id>0</id>
-                    <name>string</name>
-                  </Category>
-                  <name>doggie</name>
-                  <photoUrl>
-                    <photoUrl>string</photoUrl>
-                  </photoUrl>
-                  <tag>
-                    <Tag>
-                      <id>0</id>
-                      <name>string</name>
-                    </Tag>
-                  </tag>
-                  <status>available</status>
-                </Pet>
+      :Name: body *required*
 
-            ::
+      :Example Value: Model
 
-                pragma solidity >=0.4.0 <0.7.0;
+      ::
+          <?xml version="1.0" encoding="UTF-8"?>
+          <Pet>
+            <id>0</id>
+            <Category>
+              <id>0</id>
+              <name>string</name>
+            </Category>
+            <name>doggie</name>
+            <photoUrl>
+              <photoUrl>string</photoUrl>
+            </photoUrl>
+            <tag>
+              <Tag>
+                <id>0</id>
+                <name>string</name>
+              </Tag>
+            </tag>
+            <status>available</status>
+          </Pet>
 
-                contract SimpleStorage {
-                    uint storedData;
+      ::
 
-                    function set(uint x) public {
-                        storedData = x;
-                    }
+          pragma solidity >=0.4.0 <0.7.0;
 
-                    function get() public view returns (uint) {
-                        return storedData;
-                    }
-                }
+          contract SimpleStorage {
+              uint storedData;
 
-=========  ========================================================
+              function set(uint x) public {
+                  storedData = x;
+              }
+
+              function get() public view returns (uint) {
+                  return storedData;
+              }
+          }
 
 
-Response
-~~~~~~~~
+      =========  ========================================================
+      body             Example Value
+      =========  ========================================================
+      \
+                  ::
+                    <?xml version="1.0" encoding="UTF-8"?>
+                      <Pet>
+                        <id>0</id>
+                        <Category>
+                          <id>0</id>
+                          <name>string</name>
+                        </Category>
+                        <name>doggie</name>
+                        <photoUrl>
+                          <photoUrl>string</photoUrl>
+                        </photoUrl>
+                        <tag>
+                          <Tag>
+                            <id>0</id>
+                            <name>string</name>
+                          </Tag>
+                        </tag>
+                        <status>available</status>
+                      </Pet>
 
-+--------+----------------------------------------+
-|        |                                        |
-|  Code  |            Description                 |
-|        |                                        |
-+========+========================================+
-|        |                                        |
-|  405   |          Invalid input                 |
-|        |                                        |  
-+--------+----------------------------------------+
+                  ::
+
+                      pragma solidity >=0.4.0 <0.7.0;
+
+                      contract SimpleStorage {
+                          uint storedData;
+
+                          function set(uint x) public {
+                              storedData = x;
+                          }
+
+                          function get() public view returns (uint) {
+                              return storedData;
+                          }
+                      }
+
+      =========  ========================================================
 
 
-========  ================================
-  Code                     Description    
-========  ================================
-  405      ``Invalid input``
-========  ================================
+      Response
+      ~~~~~~~~
 
-      description: ""
+      +--------+----------------------------------------+
+      |        |                                        |
+      |  Code  |            Description                 |
+      |        |                                        |
+      +========+========================================+
+      |        |                                        |
+      |  405   |          Invalid input                 |
+      |        |                                        |  
+      +--------+----------------------------------------+
+
+
+      ========  ================================
+        Code                     Description    
+      ========  ================================
+        405      ``Invalid input``
+      ========  ================================
+
+description: ""
       operationId: "addPet"
       consumes:
       - "application/json"
