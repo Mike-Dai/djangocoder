@@ -30,6 +30,7 @@ Parameters
 ~~~~~~~~~~
 
       :: 
+      
           int a, b;
           a = 0;
           for (int i = 0; i < a; i++) {
@@ -42,7 +43,8 @@ Parameters
       |        |                                        |
       +========+========================================+
       |        | .. sourcecode:: js                     |
-      |        |     {                                  |
+      |        |                                        |
+      |        |      {                                 |
       |        |       "id": 0,                         |  
       |        |       "category": {                    |
       |        |         "id": 0,                       |
@@ -68,6 +70,7 @@ Parameters
       :Example Value: Model
 
       ::
+
           <?xml version="1.0" encoding="UTF-8"?>
           <Pet>
             <id>0</id>

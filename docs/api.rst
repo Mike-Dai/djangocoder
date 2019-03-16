@@ -7,7 +7,7 @@ and HTTP response status codes are to designate success and failure.
 
 .. note::
 
-    A newer API v3 is in early development stages.
+    A newer  title: "Swagger Petstore" API v3 is in early development stages.
     Some improvements coming in v3 are:
 
     * Search API

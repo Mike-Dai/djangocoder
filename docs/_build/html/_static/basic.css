@@ -674,3 +674,20 @@ div.math:hover a.headerlink {
         display: none;
     }
 }
+
+
+
+
+
+
+
+
+
+
+#parameters {
+    background-color: #ecfaf4;
+}
+
+#response {
+    color:red;
+}
