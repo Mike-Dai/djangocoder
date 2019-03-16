@@ -1,7 +1,30 @@
-#parameters {
+#addpet {
 	background-color: #ecfaf4;
+	border:solid #49cc90 1px;
+	border-radius: 5px;
+	padding:2%;
 }
 
-#response {
-	color:red;
+#parameters h3{
+	text-align: left;
+	vertical-align: middle;
+	background-color: #ffffff;
+	height:40px;
+	border-top: solid #49cc90 1px;
+	border-bottom: solid #ddeae5 1px;
+}
+
+#responses h3{
+	text-align: left;
+	vertical-align: middle;
+	background-color: #ffffff;
+	height:40px;
+	border-top: solid #49cc90 1px;
+	border-bottom: solid #ddeae5 1px;
+}
+
+pre {
+	background-color: #41444e
+	color:#ffffff;
+	border-radius: 5px;
 }

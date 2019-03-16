@@ -1,19 +1,8 @@
 Swagger Petstore
 ================
 
-
-This is a sample server Petstore server.  You can find out more about     Swagger at http://swagger.io or on `irc.freenode.net, #swagger`(http://swagger.io/irc/).      For this sample, you can use the api key `special-key` to test the authorization filters."
-  :version:  1.0.0
-  :title: Swagger Petstore
-  :termsOfService: http://swagger.io/terms/
-  :contact:
-    - :email: apiteam@swagger.io
-  :license:
-    - :name: Apache 2.0
-    - :url: http://www.apache.org/licenses/LICENSE-2.0.html
-    :host: petstore.swagger.io
-    :basePath: /v2
-
+:field1: body1
+:field2: body2
 
 pet
 ---
@@ -22,20 +11,87 @@ Everthing about your Pets
 
 Find out more: http://swagger.io
 
+addpet
+~~~~~~
+
 .. http:post::  /pet
 
       Add a new pet to the store
 
 Parameters
-~~~~~~~~~~
+++++++++++
+
+=========  =============================================
+Name       Description
+=========  =============================================
+body       Pet object that needs to be added to store
+=========  =============================================
+
+
+
+
+=========  =============================================
+*body*             Example Value
+=========  =============================================
+\           ::
+
+                {
+                  "id": 0,
+                  "category": {
+                    "id": 0,
+                    "name": "string"
+                  },
+                  "name": "doggie",
+                  "photoUrls": [
+                    "string"
+                  ],
+                  "tags": [
+                    {
+                      "id": 0,
+                      "name": "string"
+                    }
+                  ],
+                  "status": "available"
+                }
+            
+
+=========  =============================================
+
+
+Responses
++++++++++
+
+=========  =============================================
+  Code     Description    
+=========  =============================================
+  405      ::
+
+              Invalid input
+              
+=========  =============================================
+
+
+other
+-----
 
       :: 
-      
+
           int a, b;
           a = 0;
           for (int i = 0; i < a; i++) {
             b += a;
           }
+
+      +--------+----------------------------------------+
+      |        |                                        |
+      |  Code  |            Description                 |
+      |        |                                        |
+      +========+========================================+
+      |        |                                        |
+      |  405   |          Invalid input                 |
+      |        |                                        |  
+      +--------+----------------------------------------+
+
 
       +--------+----------------------------------------+
       |        |                                        |
@@ -65,112 +121,7 @@ Parameters
       +--------+----------------------------------------+
 
 
-      :Name: body *required*
 
-      :Example Value: Model
-
-      ::
-
-          <?xml version="1.0" encoding="UTF-8"?>
-          <Pet>
-            <id>0</id>
-            <Category>
-              <id>0</id>
-              <name>string</name>
-            </Category>
-            <name>doggie</name>
-            <photoUrl>
-              <photoUrl>string</photoUrl>
-            </photoUrl>
-            <tag>
-              <Tag>
-                <id>0</id>
-                <name>string</name>
-              </Tag>
-            </tag>
-            <status>available</status>
-          </Pet>
-
-      ::
-
-          pragma solidity >=0.4.0 <0.7.0;
-
-          contract SimpleStorage {
-              uint storedData;
-
-              function set(uint x) public {
-                  storedData = x;
-              }
-
-              function get() public view returns (uint) {
-                  return storedData;
-              }
-          }
-
-
-      =========  ========================================================
-      body             Example Value
-      =========  ========================================================
-      \
-                  ::
-                    <?xml version="1.0" encoding="UTF-8"?>
-                      <Pet>
-                        <id>0</id>
-                        <Category>
-                          <id>0</id>
-                          <name>string</name>
-                        </Category>
-                        <name>doggie</name>
-                        <photoUrl>
-                          <photoUrl>string</photoUrl>
-                        </photoUrl>
-                        <tag>
-                          <Tag>
-                            <id>0</id>
-                            <name>string</name>
-                          </Tag>
-                        </tag>
-                        <status>available</status>
-                      </Pet>
-
-                  ::
-
-                      pragma solidity >=0.4.0 <0.7.0;
-
-                      contract SimpleStorage {
-                          uint storedData;
-
-                          function set(uint x) public {
-                              storedData = x;
-                          }
-
-                          function get() public view returns (uint) {
-                              return storedData;
-                          }
-                      }
-
-      =========  ========================================================
-
-
-Response
-~~~~~~~~
-
-      +--------+----------------------------------------+
-      |        |                                        |
-      |  Code  |            Description                 |
-      |        |                                        |
-      +========+========================================+
-      |        |                                        |
-      |  405   |          Invalid input                 |
-      |        |                                        |  
-      +--------+----------------------------------------+
-
-
-      ========  ================================
-        Code                     Description    
-      ========  ================================
-        405      ``Invalid input``
-      ========  ================================
 
 description: ""
       operationId: "addPet"
