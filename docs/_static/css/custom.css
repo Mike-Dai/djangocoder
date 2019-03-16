@@ -5,7 +5,7 @@
 	padding:2%;
 }
 
-#parameters h3{
+#parameters h4{
 	text-align: left;
 	vertical-align: middle;
 	background-color: #ffffff;
@@ -14,17 +14,21 @@
 	border-bottom: solid #ddeae5 1px;
 }
 
-#responses h3{
+#responses h4{
 	text-align: left;
 	vertical-align: middle;
 	background-color: #ffffff;
 	height:40px;
 	border-top: solid #49cc90 1px;
 	border-bottom: solid #ddeae5 1px;
+}
+
+table.docutils {
+	border:none;
 }
 
 pre {
-	background-color: #41444e
+	background-color: #41444e;
 	color:#ffffff;
 	border-radius: 5px;
 }
