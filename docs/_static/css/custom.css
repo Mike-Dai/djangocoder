@@ -4,6 +4,18 @@
 	border-radius: 5px;
 }
 
+#parameters, #responses {
+	display: none;
+}
+
+.post:hover ~ #parameters {
+	display: block;
+}
+
+.post:hover ~ #responses {
+	display: block;
+}
+
 #parameters h4{
 	padding:5px;
 	text-align: left;
@@ -32,6 +44,11 @@
 }
 */
 
+.rst-content dl:not(.docutils) {
+	margin-bottom:0;
+	border-top:solid #49cc90 1px;
+}
+
 .rst-content dl dt{
 	background:#49cc90;
 	margin-left:5px;
@@ -42,6 +59,11 @@
 	background:#49cc90;
 	margin-left:5px;
 	border-radius: 3px;
+	border-color:#49cc90;
+}
+
+.rst-content dl dd {
+	margin-left:5px;
 }
 
 div h3 {
