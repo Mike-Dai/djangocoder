@@ -5,7 +5,7 @@
 }
 
 #parameters h4{
-	margin-left:5px;
+	padding:5px;
 	text-align: left;
 	vertical-align: middle;
 	background-color: #ffffff;
@@ -15,7 +15,7 @@
 }
 
 #responses h4{
-	margin-left:5px;
+	padding:5px;
 	text-align: left;
 	vertical-align: middle;
 	background-color: #ffffff;
@@ -24,7 +24,15 @@
 	border-bottom: solid #ddeae5 1px;
 }
 
+/*
 .post dt{
+	background:#49cc90;
+	margin-left:5px;
+	border-radius: 3px;
+}
+*/
+
+.rst-content dl dt{
 	background:#49cc90;
 	margin-left:5px;
 	border-radius: 3px;
@@ -35,8 +43,8 @@ div h3 {
 }
 
 table.docutils {
-	border:none;
-	background-color: transparent;
+	border:none !important;
+	background-color: transparent !important;
 	margin-left:auto;
 	margin-right:auto;
 }
