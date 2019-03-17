@@ -1,4 +1,4 @@
-var button = document.getElementById('post--pet');
+var button = document.getElementById('addpet');
 
 button.onclick = function() {
 	var parameters = document.getElementById('parameters');

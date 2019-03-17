@@ -51,15 +51,18 @@
 	border-top:solid #49cc90 1px;
 }
 
+/*
 .rst-content dl dt{
 	background:#49cc90;
 	margin-left:5px;
 	border-radius: 3px;
 }
+*/
 
 .rst-content dl:not(.docutils) dt {
 	background:#49cc90;
 	margin-left:5px;
+	margin-top:5px;
 	border-radius: 3px;
 	border-color:#49cc90;
 	cursor:pointer;
