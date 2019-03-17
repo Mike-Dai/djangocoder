@@ -38,13 +38,23 @@
 	border-radius: 3px;
 }
 
+.rst-content dl:not(.docutils) dt {
+	background:#49cc90;
+	margin-left:5px;
+	border-radius: 3px;
+}
+
 div h3 {
 	margin:5px;
 }
 
+table.docutils:not(.field-list) tr:nth-child(2n-1) td {
+	background-color: transparent;
+}
+
 table.docutils {
-	border:none !important;
-	background-color: transparent !important;
+	/*border:none !important;*/
+	/*background-color: transparent !important;*/
 	margin-left:auto;
 	margin-right:auto;
 }
