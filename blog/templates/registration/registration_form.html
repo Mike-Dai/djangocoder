@@ -1,6 +1,8 @@
 {% extends 'blog/base.html' %}
 {% block content %}
 
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
 <form class="register-form" method="POST">
 	{% csrf_token %}
 	{{ form.as_p }}
@@ -8,4 +10,41 @@
 		<button class="btn btn-primary" type="submit">Register</button>
 	</div>
 </form>
+
+
+<script>
+		$("#id_username").change(function () {
+			console.log( $(this).val() );
+			/*
+			var form = $(this).closest("form");
+			$.ajax({
+				url: form.attr("data-validate-username-url"),
+				data: form.serialize(),
+				dataType: 'json',
+				success: function (data) {
+					if (data.is_taken) {
+						alert(data.error_message);
+					}
+				}
+			});
+			*/
+			/*
+			var username = $(this).val();
+
+			$.ajax({
+				url: 'ajax/validate_username/',
+				data: {
+					'username': username
+				},
+				dataType: 'json',
+				success: function (data) {
+					if (data.is_taken) {
+						alert("A user with this username already exists.");
+					}
+				}
+			});
+			*/
+		});
+
+</script>
 {% endblock %}
