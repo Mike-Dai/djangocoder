@@ -20,5 +20,6 @@ urlpatterns = [
 	url(r'^register/$', views.register, name='register'),
 	url(r'^profile/$', views.user_profile, name='user_profile'),
 	url(r'^profile/edit/$', views.profile_edit, name='profile_edit'),
+	url(r'^ajax/validate_username/$', views.validate_username, name='validate_username'),
 ]
 
