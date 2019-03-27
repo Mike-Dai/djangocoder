@@ -13,3 +13,4 @@ function showPlaceholder() {
 	password.setAttribute("placeholder", "password");
 	password.setAttribute("height", "200px");
 }
+

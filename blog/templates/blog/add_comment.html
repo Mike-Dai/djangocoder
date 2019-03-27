@@ -3,13 +3,9 @@
 <div>
 	<form action="" method="POST">
 		{% csrf_token %}
-		<div class="fieldWrapper" align="center">
-			{{ form.errors }}
-			<label> text:</label>
-			{{ form.text }}
-		</div>
+		{{ form.text }}
 		<div style = "text-align: center;">
-			<button class="btn btn-primary" type="submit">Comment</button>
+			<button id="push-com" class="btn btn-primary" type="submit">Comment</button>
 		</div>
 	</form>
 </div>

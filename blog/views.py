@@ -8,9 +8,10 @@ from .forms import PostForm, CommentForm, ProfileForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
 from django.views.generic import ListView, DetailView
+from django.views.decorators.http import require_POST
 from django.core.paginator import Paginator
 from django.db.models import Q
-from django.http import Http404
+from django.http import Http404, JsonResponse
 from django.contrib.admin.views.decorators import staff_member_required
 
 class IndexView(ListView):
@@ -99,6 +100,12 @@ class PostDetailView(DetailView):
 	                                    ])
 		return post
 
+	def get_context_data(self, **kwargs):
+		context = super(PostDetailView, self).get_context_data(**kwargs)
+		kwargs['form'] = CommentForm()
+		return context
+
+
 def previous_post(request, pk):
 	post = get_object_or_404(Post, pk=pk)
 	prev_post = post.filter(pk__lt=post.pk)[0:1]
@@ -164,6 +171,15 @@ def post_delete(request, pk):
 
 @login_required
 def add_comment(request, pk):
+	"""
+	if request.is_ajax():
+		data = request.POST
+		new_user = request.user
+		new_text = data.get('text')
+		the_post = Post.objects.get(pk=pk)
+		new_comment = Comment(post=the_post, author=new_user, text=new_text)
+
+	"""
 	post = Post.objects.get(pk=pk)
 	if request.method == "POST":
 		form = CommentForm(request.POST)
@@ -178,11 +194,12 @@ def add_comment(request, pk):
 			#comment.text = form.text
 			#comment.approve()
 			comment.save()
-			return redirect('post_detail', pk=post.pk)
+			return redirect('post_detail', pk=post.pk)	
 	else:
 		#return HttpResponse(request.method)
 		form = CommentForm()
 	return render(request, 'blog/add_comment.html', {'form': form})
+
 
 @staff_member_required
 def approve_comment(request,pk):
@@ -270,3 +287,12 @@ def profile_edit(request):
 	else:
 		form = ProfileForm(instance=user)
 	return render(request, 'blog/profile_edit.html', {'form': form})
+
+def validate_username(request):
+	username = request.GET.get('username', None)
+	data = {
+		'is_taken': User.objects.filter(username__iexact=username).exists()
+	}
+	if data['is_taken']:
+		data['error_message'] = 'A user with this username already exists.'
+	return JsonResponse(data)
