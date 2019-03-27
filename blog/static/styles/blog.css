@@ -48,9 +48,7 @@ body {
 	padding-bottom: 1%;
 	border-radius: 5px;	
 }
-.sidebar:hover {
-	box-shadow: 2px 2px 10px #848484;
-}
+
 .widget {
 	margin:5%;
 	padding:5%;
@@ -188,7 +186,7 @@ body {
 }
 .carousel-item {
 	overflow:hidden;
-	width:747px;
+	width:900px;
 	height:280px;
 }
 .form-control {

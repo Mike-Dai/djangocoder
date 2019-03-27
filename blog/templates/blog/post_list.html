@@ -39,7 +39,11 @@
 			<div class="text-xs-center">
 				<ul class="pagination justify-content-center">
 				    {% for i in page_range %}
-				    	<li class="page-item"><a class="page-link" href="?page={{ i }}">{{ i }}</a></li>
+				    	{% if i == page.number %}
+				    		<li class="page-item"><a class="page-link" style="color:red;" href="?page={{ i }}">{{ i }}</a></li>
+				    	{% else %}
+				    		<li class="page-item"><a class="page-link" href="?page={{ i }}">{{ i }}</a></li>
+				    	{% endif %}
 				    {% endfor %}
 				</ul>
 			</div>
